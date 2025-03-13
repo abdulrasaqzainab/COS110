@@ -1,0 +1,87 @@
+        -:    0:Source:Stack.cpp
+        -:    1:#include "Stack.h"
+        -:    2:#ifndef STACK_CPP
+        -:    3:#define STACK_CPP
+        -:    4:
+        -:    5:template<class T>
+        2:    6:Stack<T>::Stack()
+        -:    7:{
+        2:    8:    top=NULL;
+        2:    9:}
+        -:   10:
+        -:   11:template<class T>
+        3:   12:Stack<T>::~Stack()
+        -:   13:{
+        6:   14:    while(!isEmpty())
+        -:   15:    {
+        3:   16:        pop();
+        -:   17:    }
+        3:   18:}
+        -:   19:
+        -:   20:template<class T>
+        1:   21:Stack<T>::Stack(const Stack<T>& other)
+        -:   22:{
+        1:   23:    top=NULL;
+        -:   24:
+        1:   25:    Node<T>* temp = other.top;
+        1:   26:    Node<T>* last=NULL;
+        4:   27:    while(temp)
+        -:   28:    {
+        3:   29:        Node<T>* newnode=new Node<T>(temp->data);
+        -:   30:    
+        -:   31:
+        3:   32:    if (last)
+        -:   33:    {
+        2:   34:        last->next=newnode;
+        -:   35:    }
+        -:   36:    else
+        -:   37:    {
+        1:   38:        top=newnode;
+        -:   39:    }
+        3:   40:    last=newnode;
+        3:   41:    temp=temp->next;
+        -:   42:    }
+        1:   43:}
+        -:   44:
+        -:   45:template<class T>
+       10:   46:void Stack<T>::push(T data)
+        -:   47:{
+       10:   48:  Node<T>* newnode= new Node<T>(data);
+       10:   49:  newnode->next=top;
+       10:   50:  top=newnode;   
+       10:   51:}
+        -:   52:
+        -:   53:template<class T>
+       16:   54:T Stack<T>::pop()
+        -:   55:{
+       16:   56:    if(isEmpty())
+        -:   57:    {
+        3:   58:        return T();
+        -:   59:    }
+        -:   60:
+       13:   61:    Node<T>* popout=top;
+       13:   62:    top=top->next;
+       13:   63:    T data=popout->data;
+       13:   64:    delete popout;
+       13:   65:    return data;
+        -:   66:}
+        -:   67:
+        -:   68:template<class T>
+        1:   69:const T Stack<T>::peek()const
+        -:   70:{
+        1:   71:    if(isEmpty())
+        -:   72:    {
+    #####:   73:        return T();
+        -:   74:    }
+        1:   75:    return top->data;
+        -:   76:}
+        -:   77:
+        -:   78:template<class T>
+       24:   79:bool Stack<T>::isEmpty()const
+        -:   80:{
+       24:   81:    return top==NULL;
+        -:   82:}
+        -:   83:
+        -:   84:
+        -:   85:
+        -:   86:#endif

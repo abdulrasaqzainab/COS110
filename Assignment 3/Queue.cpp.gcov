@@ -1,0 +1,99 @@
+        -:    0:Source:Queue.cpp
+        -:    1:#include "Queue.h"
+        -:    2:#ifndef QUEUE_CPP
+        -:    3:#define QUEUE_CPP
+        -:    4:
+        -:    5:template<class T>
+        2:    6:Queue<T>::Queue()
+        -:    7:{
+        2:    8:    head=NULL;
+        2:    9:    tail=NULL;
+        2:   10:}
+        -:   11:
+        -:   12:template<class T>
+        3:   13:Queue<T>::~Queue()
+        -:   14:{
+        6:   15:    while(!isEmpty())
+        -:   16:    {
+        3:   17:        dequeue();
+        -:   18:    }   
+        3:   19:}
+        -:   20:
+        -:   21:template<class T>
+        1:   22:Queue<T>::Queue(const Queue<T>& other)
+        -:   23:{
+        1:   24:    head=NULL;
+        1:   25:    tail=NULL;
+        -:   26:
+        1:   27:    Node<T>* curr=other.head;
+        4:   28:    while(curr!=NULL)
+        -:   29:    {
+        3:   30:        enqueue(curr->data);
+        3:   31:        curr=curr->next;
+        -:   32:    }
+        1:   33:}
+        -:   34:
+        -:   35:template<class T>
+        -:   36:Queue<T>* Queue<T>::clone()const
+        -:   37:{
+        -:   38:    Queue<T>* tyrone=new Queue<T>(*this);
+        -:   39:    return tyrone;
+        -:   40:}
+        -:   41:
+        -:   42:template<class T>
+       13:   43:void Queue<T>::enqueue(T data)
+        -:   44:{
+       13:   45:    Node<T>* newnode=new Node<T>(data);
+       13:   46:    if(isEmpty())
+        -:   47:    {
+        4:   48:        head=newnode;
+        4:   49:        tail=newnode;
+        -:   50:    }
+        -:   51:    else
+        -:   52:    {
+        9:   53:        tail->next=newnode;
+        9:   54:        tail=newnode;
+        -:   55:    }
+       13:   56:}
+        -:   57:
+        -:   58:template<class T>
+       16:   59:T Queue<T>::dequeue()
+        -:   60:{
+       16:   61:    if(isEmpty())
+        -:   62:    {
+        3:   63:        return T();
+        -:   64:    }
+        -:   65:
+        -:   66:
+       13:   67:    Node<T>* removed=head;
+       13:   68:    head=head->next;
+       13:   69:    T data=removed->data;
+       13:   70:    delete removed;
+        -:   71:
+       13:   72:    if(head != NULL)
+        -:   73:    {
+        9:   74:        tail=NULL;
+        -:   75:    }
+       13:   76:    return data;
+        -:   77:}
+        -:   78:
+        -:   79:
+        -:   80:template<class T>
+        1:   81:const T Queue<T>::peek()const
+        -:   82:{
+        1:   83:    if(isEmpty())
+        -:   84:    {
+    #####:   85:        return T();
+        -:   86:    }
+        1:   87:    return head->data;
+        -:   88:}
+        -:   89:
+        -:   90:template<class T>
+       37:   91:bool Queue<T>::isEmpty()const
+        -:   92:{
+       37:   93:    return head==NULL;   
+        -:   94:}
+        -:   95:
+        -:   96:
+        -:   97:#endif
+        -:   98:

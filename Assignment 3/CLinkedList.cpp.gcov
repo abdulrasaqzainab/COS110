@@ -1,0 +1,3702 @@
+        -:    0:Source:CLinkedList.cpp
+        -:    1:#ifndef CLINKEDLIST_CPP
+        -:    2:#define CLINKEDLIST_CPP
+        -:    3:#include "CLinkedList.h"
+        -:    4:
+        -:    5:
+        -:    6:template<class T>
+       25:    7:CLinkedList<T>::CLinkedList()
+        -:    8:{
+       25:    9:    this->head=NULL;
+       25:   10:}
+------------------
+_ZN11CLinkedListIsEC2Ev:
+        6:    7:CLinkedList<T>::CLinkedList()
+        -:    8:{
+        6:    9:    this->head=NULL;
+        6:   10:}
+------------------
+_ZN11CLinkedListIfEC2Ev:
+        6:    7:CLinkedList<T>::CLinkedList()
+        -:    8:{
+        6:    9:    this->head=NULL;
+        6:   10:}
+------------------
+_ZN11CLinkedListIdEC2Ev:
+        6:    7:CLinkedList<T>::CLinkedList()
+        -:    8:{
+        6:    9:    this->head=NULL;
+        6:   10:}
+------------------
+_ZN11CLinkedListIiEC2Ev:
+        7:    7:CLinkedList<T>::CLinkedList()
+        -:    8:{
+        7:    9:    this->head=NULL;
+        7:   10:}
+------------------
+        -:   11:
+        -:   12:template<class T>
+       21:   13:CLinkedList<T>::~CLinkedList()
+        -:   14:{
+        -:   15:    //delete all nodes
+        -:   16:    /*if(this->head == NULL)
+        -:   17:    {
+        -:   18:        return;
+        -:   19:    }
+        -:   20:
+        -:   21:    Node<T>* curr=this->head;
+        -:   22:    Node<T>* next;
+        -:   23:
+        -:   24:    do
+        -:   25:    {
+        -:   26:        next=curr->next;
+        -:   27:        delete curr;
+        -:   28:        curr=next;
+        -:   29:    } while (curr != this->head);
+        -:   30:    
+        -:   31:    this->head=NULL;*/
+        -:   32:
+       21:   33:    if(this->head==NULL)
+        -:   34:    {
+        5:   35:        return;
+        -:   36:    }
+        -:   37:    
+       16:   38:    if(this->head!=NULL)
+        -:   39:    {
+       16:   40:        Node<T>* nodePtr=this->head->next;
+        -:   41:
+       75:   42:        while(nodePtr!=this->head)
+        -:   43:        {
+       59:   44:            Node<T>* prev=nodePtr;
+       59:   45:            nodePtr=nodePtr->next;
+       59:   46:            delete prev;
+        -:   47:        }
+       16:   48:        delete this->head;
+       16:   49:        this->head=NULL;
+        -:   50:    }
+        -:   51:
+       37:   52:}
+------------------
+_ZN11CLinkedListIsED2Ev:
+        5:   13:CLinkedList<T>::~CLinkedList()
+        -:   14:{
+        -:   15:    //delete all nodes
+        -:   16:    /*if(this->head == NULL)
+        -:   17:    {
+        -:   18:        return;
+        -:   19:    }
+        -:   20:
+        -:   21:    Node<T>* curr=this->head;
+        -:   22:    Node<T>* next;
+        -:   23:
+        -:   24:    do
+        -:   25:    {
+        -:   26:        next=curr->next;
+        -:   27:        delete curr;
+        -:   28:        curr=next;
+        -:   29:    } while (curr != this->head);
+        -:   30:    
+        -:   31:    this->head=NULL;*/
+        -:   32:
+        5:   33:    if(this->head==NULL)
+        -:   34:    {
+        1:   35:        return;
+        -:   36:    }
+        -:   37:    
+        4:   38:    if(this->head!=NULL)
+        -:   39:    {
+        4:   40:        Node<T>* nodePtr=this->head->next;
+        -:   41:
+       19:   42:        while(nodePtr!=this->head)
+        -:   43:        {
+       15:   44:            Node<T>* prev=nodePtr;
+       15:   45:            nodePtr=nodePtr->next;
+       15:   46:            delete prev;
+        -:   47:        }
+        4:   48:        delete this->head;
+        4:   49:        this->head=NULL;
+        -:   50:    }
+        -:   51:
+        9:   52:}
+------------------
+_ZN11CLinkedListIfED2Ev:
+        5:   13:CLinkedList<T>::~CLinkedList()
+        -:   14:{
+        -:   15:    //delete all nodes
+        -:   16:    /*if(this->head == NULL)
+        -:   17:    {
+        -:   18:        return;
+        -:   19:    }
+        -:   20:
+        -:   21:    Node<T>* curr=this->head;
+        -:   22:    Node<T>* next;
+        -:   23:
+        -:   24:    do
+        -:   25:    {
+        -:   26:        next=curr->next;
+        -:   27:        delete curr;
+        -:   28:        curr=next;
+        -:   29:    } while (curr != this->head);
+        -:   30:    
+        -:   31:    this->head=NULL;*/
+        -:   32:
+        5:   33:    if(this->head==NULL)
+        -:   34:    {
+        1:   35:        return;
+        -:   36:    }
+        -:   37:    
+        4:   38:    if(this->head!=NULL)
+        -:   39:    {
+        4:   40:        Node<T>* nodePtr=this->head->next;
+        -:   41:
+       19:   42:        while(nodePtr!=this->head)
+        -:   43:        {
+       15:   44:            Node<T>* prev=nodePtr;
+       15:   45:            nodePtr=nodePtr->next;
+       15:   46:            delete prev;
+        -:   47:        }
+        4:   48:        delete this->head;
+        4:   49:        this->head=NULL;
+        -:   50:    }
+        -:   51:
+        9:   52:}
+------------------
+_ZN11CLinkedListIdED2Ev:
+        5:   13:CLinkedList<T>::~CLinkedList()
+        -:   14:{
+        -:   15:    //delete all nodes
+        -:   16:    /*if(this->head == NULL)
+        -:   17:    {
+        -:   18:        return;
+        -:   19:    }
+        -:   20:
+        -:   21:    Node<T>* curr=this->head;
+        -:   22:    Node<T>* next;
+        -:   23:
+        -:   24:    do
+        -:   25:    {
+        -:   26:        next=curr->next;
+        -:   27:        delete curr;
+        -:   28:        curr=next;
+        -:   29:    } while (curr != this->head);
+        -:   30:    
+        -:   31:    this->head=NULL;*/
+        -:   32:
+        5:   33:    if(this->head==NULL)
+        -:   34:    {
+        1:   35:        return;
+        -:   36:    }
+        -:   37:    
+        4:   38:    if(this->head!=NULL)
+        -:   39:    {
+        4:   40:        Node<T>* nodePtr=this->head->next;
+        -:   41:
+       18:   42:        while(nodePtr!=this->head)
+        -:   43:        {
+       14:   44:            Node<T>* prev=nodePtr;
+       14:   45:            nodePtr=nodePtr->next;
+       14:   46:            delete prev;
+        -:   47:        }
+        4:   48:        delete this->head;
+        4:   49:        this->head=NULL;
+        -:   50:    }
+        -:   51:
+        9:   52:}
+------------------
+_ZN11CLinkedListIiED2Ev:
+        6:   13:CLinkedList<T>::~CLinkedList()
+        -:   14:{
+        -:   15:    //delete all nodes
+        -:   16:    /*if(this->head == NULL)
+        -:   17:    {
+        -:   18:        return;
+        -:   19:    }
+        -:   20:
+        -:   21:    Node<T>* curr=this->head;
+        -:   22:    Node<T>* next;
+        -:   23:
+        -:   24:    do
+        -:   25:    {
+        -:   26:        next=curr->next;
+        -:   27:        delete curr;
+        -:   28:        curr=next;
+        -:   29:    } while (curr != this->head);
+        -:   30:    
+        -:   31:    this->head=NULL;*/
+        -:   32:
+        6:   33:    if(this->head==NULL)
+        -:   34:    {
+        2:   35:        return;
+        -:   36:    }
+        -:   37:    
+        4:   38:    if(this->head!=NULL)
+        -:   39:    {
+        4:   40:        Node<T>* nodePtr=this->head->next;
+        -:   41:
+       19:   42:        while(nodePtr!=this->head)
+        -:   43:        {
+       15:   44:            Node<T>* prev=nodePtr;
+       15:   45:            nodePtr=nodePtr->next;
+       15:   46:            delete prev;
+        -:   47:        }
+        4:   48:        delete this->head;
+        4:   49:        this->head=NULL;
+        -:   50:    }
+        -:   51:
+       10:   52:}
+------------------
+        -:   53:template<class T>
+       50:   54:void CLinkedList<T>::prepend(T data)
+        -:   55:{
+       50:   56:    Node<T>* newnode=new Node<T>(data);
+       50:   57:    Node<T>* temp=head;
+        -:   58:
+       50:   59:    if(this->head == NULL)
+        -:   60:    {
+        -:   61:        //list empty
+        9:   62:        this->head=newnode;
+        9:   63:        newnode->next=newnode;
+        -:   64:    }
+        -:   65:
+        -:   66:    else
+        -:   67:    {
+        -:   68:        //list not empty
+        -:   69:        
+        -:   70:
+      141:   71:            while(temp->next != head)
+        -:   72:            {
+        -:   73:            
+      100:   74:            temp=temp->next;
+        -:   75:           
+        -:   76:            }
+       41:   77:            temp->next=newnode;
+       41:   78:            newnode->next=head;
+       41:   79:            this->head=newnode;
+        -:   80:
+        -:   81:    }
+        -:   82:
+       50:   83:}
+------------------
+_ZN11CLinkedListIsE7prependEs:
+       12:   54:void CLinkedList<T>::prepend(T data)
+        -:   55:{
+       12:   56:    Node<T>* newnode=new Node<T>(data);
+       12:   57:    Node<T>* temp=head;
+        -:   58:
+       12:   59:    if(this->head == NULL)
+        -:   60:    {
+        -:   61:        //list empty
+        2:   62:        this->head=newnode;
+        2:   63:        newnode->next=newnode;
+        -:   64:    }
+        -:   65:
+        -:   66:    else
+        -:   67:    {
+        -:   68:        //list not empty
+        -:   69:        
+        -:   70:
+       35:   71:            while(temp->next != head)
+        -:   72:            {
+        -:   73:            
+       25:   74:            temp=temp->next;
+        -:   75:           
+        -:   76:            }
+       10:   77:            temp->next=newnode;
+       10:   78:            newnode->next=head;
+       10:   79:            this->head=newnode;
+        -:   80:
+        -:   81:    }
+        -:   82:
+       12:   83:}
+------------------
+_ZN11CLinkedListIfE7prependEf:
+       12:   54:void CLinkedList<T>::prepend(T data)
+        -:   55:{
+       12:   56:    Node<T>* newnode=new Node<T>(data);
+       12:   57:    Node<T>* temp=head;
+        -:   58:
+       12:   59:    if(this->head == NULL)
+        -:   60:    {
+        -:   61:        //list empty
+        2:   62:        this->head=newnode;
+        2:   63:        newnode->next=newnode;
+        -:   64:    }
+        -:   65:
+        -:   66:    else
+        -:   67:    {
+        -:   68:        //list not empty
+        -:   69:        
+        -:   70:
+       35:   71:            while(temp->next != head)
+        -:   72:            {
+        -:   73:            
+       25:   74:            temp=temp->next;
+        -:   75:           
+        -:   76:            }
+       10:   77:            temp->next=newnode;
+       10:   78:            newnode->next=head;
+       10:   79:            this->head=newnode;
+        -:   80:
+        -:   81:    }
+        -:   82:
+       12:   83:}
+------------------
+_ZN11CLinkedListIdE7prependEd:
+       14:   54:void CLinkedList<T>::prepend(T data)
+        -:   55:{
+       14:   56:    Node<T>* newnode=new Node<T>(data);
+       14:   57:    Node<T>* temp=head;
+        -:   58:
+       14:   59:    if(this->head == NULL)
+        -:   60:    {
+        -:   61:        //list empty
+        3:   62:        this->head=newnode;
+        3:   63:        newnode->next=newnode;
+        -:   64:    }
+        -:   65:
+        -:   66:    else
+        -:   67:    {
+        -:   68:        //list not empty
+        -:   69:        
+        -:   70:
+       36:   71:            while(temp->next != head)
+        -:   72:            {
+        -:   73:            
+       25:   74:            temp=temp->next;
+        -:   75:           
+        -:   76:            }
+       11:   77:            temp->next=newnode;
+       11:   78:            newnode->next=head;
+       11:   79:            this->head=newnode;
+        -:   80:
+        -:   81:    }
+        -:   82:
+       14:   83:}
+------------------
+_ZN11CLinkedListIiE7prependEi:
+       12:   54:void CLinkedList<T>::prepend(T data)
+        -:   55:{
+       12:   56:    Node<T>* newnode=new Node<T>(data);
+       12:   57:    Node<T>* temp=head;
+        -:   58:
+       12:   59:    if(this->head == NULL)
+        -:   60:    {
+        -:   61:        //list empty
+        2:   62:        this->head=newnode;
+        2:   63:        newnode->next=newnode;
+        -:   64:    }
+        -:   65:
+        -:   66:    else
+        -:   67:    {
+        -:   68:        //list not empty
+        -:   69:        
+        -:   70:
+       35:   71:            while(temp->next != head)
+        -:   72:            {
+        -:   73:            
+       25:   74:            temp=temp->next;
+        -:   75:           
+        -:   76:            }
+       10:   77:            temp->next=newnode;
+       10:   78:            newnode->next=head;
+       10:   79:            this->head=newnode;
+        -:   80:
+        -:   81:    }
+        -:   82:
+       12:   83:}
+------------------
+        -:   84:
+        -:   85:template<class T>
+      161:   86:void CLinkedList<T>::append(T data)
+        -:   87:{
+      161:   88:    Node<T>* newnode=new Node<T>(data);
+      161:   89:    Node<T>* temp=head;
+      161:   90:    if(this->head == NULL)
+        -:   91:    {
+        -:   92:        //list empty
+       32:   93:        this->head=newnode;
+       32:   94:        newnode->next=newnode;
+        -:   95:    }
+        -:   96:
+        -:   97:    else
+        -:   98:    {
+        -:   99:        //list not empty
+      540:  100:            while(temp->next != head)
+        -:  101:            {
+        -:  102:            //newnode->next=this->head->next;
+        -:  103:            //this->head->next=newnode;
+      411:  104:            temp=temp->next;
+        -:  105:            //this->head=newnode;
+        -:  106:            }
+      129:  107:            temp->next=newnode;
+      129:  108:            newnode->next=head;
+        -:  109:
+        -:  110:
+        -:  111:    }
+      161:  112:}
+------------------
+_ZN11CLinkedListIsE6appendEs:
+       34:   86:void CLinkedList<T>::append(T data)
+        -:   87:{
+       34:   88:    Node<T>* newnode=new Node<T>(data);
+       34:   89:    Node<T>* temp=head;
+       34:   90:    if(this->head == NULL)
+        -:   91:    {
+        -:   92:        //list empty
+        8:   93:        this->head=newnode;
+        8:   94:        newnode->next=newnode;
+        -:   95:    }
+        -:   96:
+        -:   97:    else
+        -:   98:    {
+        -:   99:        //list not empty
+       95:  100:            while(temp->next != head)
+        -:  101:            {
+        -:  102:            //newnode->next=this->head->next;
+        -:  103:            //this->head->next=newnode;
+       69:  104:            temp=temp->next;
+        -:  105:            //this->head=newnode;
+        -:  106:            }
+       26:  107:            temp->next=newnode;
+       26:  108:            newnode->next=head;
+        -:  109:
+        -:  110:
+        -:  111:    }
+       34:  112:}
+------------------
+_ZN11CLinkedListIfE6appendEf:
+       34:   86:void CLinkedList<T>::append(T data)
+        -:   87:{
+       34:   88:    Node<T>* newnode=new Node<T>(data);
+       34:   89:    Node<T>* temp=head;
+       34:   90:    if(this->head == NULL)
+        -:   91:    {
+        -:   92:        //list empty
+        8:   93:        this->head=newnode;
+        8:   94:        newnode->next=newnode;
+        -:   95:    }
+        -:   96:
+        -:   97:    else
+        -:   98:    {
+        -:   99:        //list not empty
+       95:  100:            while(temp->next != head)
+        -:  101:            {
+        -:  102:            //newnode->next=this->head->next;
+        -:  103:            //this->head->next=newnode;
+       69:  104:            temp=temp->next;
+        -:  105:            //this->head=newnode;
+        -:  106:            }
+       26:  107:            temp->next=newnode;
+       26:  108:            newnode->next=head;
+        -:  109:
+        -:  110:
+        -:  111:    }
+       34:  112:}
+------------------
+_ZN11CLinkedListIdE6appendEd:
+       59:   86:void CLinkedList<T>::append(T data)
+        -:   87:{
+       59:   88:    Node<T>* newnode=new Node<T>(data);
+       59:   89:    Node<T>* temp=head;
+       59:   90:    if(this->head == NULL)
+        -:   91:    {
+        -:   92:        //list empty
+        8:   93:        this->head=newnode;
+        8:   94:        newnode->next=newnode;
+        -:   95:    }
+        -:   96:
+        -:   97:    else
+        -:   98:    {
+        -:   99:        //list not empty
+      255:  100:            while(temp->next != head)
+        -:  101:            {
+        -:  102:            //newnode->next=this->head->next;
+        -:  103:            //this->head->next=newnode;
+      204:  104:            temp=temp->next;
+        -:  105:            //this->head=newnode;
+        -:  106:            }
+       51:  107:            temp->next=newnode;
+       51:  108:            newnode->next=head;
+        -:  109:
+        -:  110:
+        -:  111:    }
+       59:  112:}
+------------------
+_ZN11CLinkedListIiE6appendEi:
+       34:   86:void CLinkedList<T>::append(T data)
+        -:   87:{
+       34:   88:    Node<T>* newnode=new Node<T>(data);
+       34:   89:    Node<T>* temp=head;
+       34:   90:    if(this->head == NULL)
+        -:   91:    {
+        -:   92:        //list empty
+        8:   93:        this->head=newnode;
+        8:   94:        newnode->next=newnode;
+        -:   95:    }
+        -:   96:
+        -:   97:    else
+        -:   98:    {
+        -:   99:        //list not empty
+       95:  100:            while(temp->next != head)
+        -:  101:            {
+        -:  102:            //newnode->next=this->head->next;
+        -:  103:            //this->head->next=newnode;
+       69:  104:            temp=temp->next;
+        -:  105:            //this->head=newnode;
+        -:  106:            }
+       26:  107:            temp->next=newnode;
+       26:  108:            newnode->next=head;
+        -:  109:
+        -:  110:
+        -:  111:    }
+       34:  112:}
+------------------
+        -:  113:
+        -:  114:template<class T>
+        8:  115:void CLinkedList<T>::insert(T data,int index)
+        -:  116:{
+        -:  117:
+       8*:  118:    if(index<0 || index>length())
+        -:  119:    {
+    #####:  120:        return;
+        -:  121:    }
+        -:  122:
+        8:  123:    Node<T>* newnode=new Node<T>(data);
+        8:  124:    if(index==0)
+        -:  125:    {
+    #####:  126:        this->prepend(data);
+        -:  127:    }
+        8:  128:    else if(index==length())
+        -:  129:    {
+        4:  130:        this->append(data);
+        -:  131:    }
+        -:  132:    else
+        -:  133:    {
+        -:  134:        //inserting at specific index
+        4:  135:        Node<T>* curr=this->head;
+        -:  136:
+       4*:  137:        for(int x=0;x<index-1;x++)
+        -:  138:        {
+    #####:  139:            curr=curr->next;
+        -:  140:        }
+        -:  141:
+        4:  142:        newnode->next=curr->next;
+        4:  143:        curr->next=newnode;
+        -:  144:    }
+        -:  145:
+        -:  146:}
+------------------
+_ZN11CLinkedListIsE6insertEsi:
+        2:  115:void CLinkedList<T>::insert(T data,int index)
+        -:  116:{
+        -:  117:
+       2*:  118:    if(index<0 || index>length())
+        -:  119:    {
+    #####:  120:        return;
+        -:  121:    }
+        -:  122:
+        2:  123:    Node<T>* newnode=new Node<T>(data);
+        2:  124:    if(index==0)
+        -:  125:    {
+    #####:  126:        this->prepend(data);
+        -:  127:    }
+        2:  128:    else if(index==length())
+        -:  129:    {
+        1:  130:        this->append(data);
+        -:  131:    }
+        -:  132:    else
+        -:  133:    {
+        -:  134:        //inserting at specific index
+        1:  135:        Node<T>* curr=this->head;
+        -:  136:
+       1*:  137:        for(int x=0;x<index-1;x++)
+        -:  138:        {
+    #####:  139:            curr=curr->next;
+        -:  140:        }
+        -:  141:
+        1:  142:        newnode->next=curr->next;
+        1:  143:        curr->next=newnode;
+        -:  144:    }
+        -:  145:
+        -:  146:}
+------------------
+_ZN11CLinkedListIfE6insertEfi:
+        2:  115:void CLinkedList<T>::insert(T data,int index)
+        -:  116:{
+        -:  117:
+       2*:  118:    if(index<0 || index>length())
+        -:  119:    {
+    #####:  120:        return;
+        -:  121:    }
+        -:  122:
+        2:  123:    Node<T>* newnode=new Node<T>(data);
+        2:  124:    if(index==0)
+        -:  125:    {
+    #####:  126:        this->prepend(data);
+        -:  127:    }
+        2:  128:    else if(index==length())
+        -:  129:    {
+        1:  130:        this->append(data);
+        -:  131:    }
+        -:  132:    else
+        -:  133:    {
+        -:  134:        //inserting at specific index
+        1:  135:        Node<T>* curr=this->head;
+        -:  136:
+       1*:  137:        for(int x=0;x<index-1;x++)
+        -:  138:        {
+    #####:  139:            curr=curr->next;
+        -:  140:        }
+        -:  141:
+        1:  142:        newnode->next=curr->next;
+        1:  143:        curr->next=newnode;
+        -:  144:    }
+        -:  145:
+        -:  146:}
+------------------
+_ZN11CLinkedListIdE6insertEdi:
+        2:  115:void CLinkedList<T>::insert(T data,int index)
+        -:  116:{
+        -:  117:
+       2*:  118:    if(index<0 || index>length())
+        -:  119:    {
+    #####:  120:        return;
+        -:  121:    }
+        -:  122:
+        2:  123:    Node<T>* newnode=new Node<T>(data);
+        2:  124:    if(index==0)
+        -:  125:    {
+    #####:  126:        this->prepend(data);
+        -:  127:    }
+        2:  128:    else if(index==length())
+        -:  129:    {
+        1:  130:        this->append(data);
+        -:  131:    }
+        -:  132:    else
+        -:  133:    {
+        -:  134:        //inserting at specific index
+        1:  135:        Node<T>* curr=this->head;
+        -:  136:
+       1*:  137:        for(int x=0;x<index-1;x++)
+        -:  138:        {
+    #####:  139:            curr=curr->next;
+        -:  140:        }
+        -:  141:
+        1:  142:        newnode->next=curr->next;
+        1:  143:        curr->next=newnode;
+        -:  144:    }
+        -:  145:
+        -:  146:}
+------------------
+_ZN11CLinkedListIiE6insertEii:
+        2:  115:void CLinkedList<T>::insert(T data,int index)
+        -:  116:{
+        -:  117:
+       2*:  118:    if(index<0 || index>length())
+        -:  119:    {
+    #####:  120:        return;
+        -:  121:    }
+        -:  122:
+        2:  123:    Node<T>* newnode=new Node<T>(data);
+        2:  124:    if(index==0)
+        -:  125:    {
+    #####:  126:        this->prepend(data);
+        -:  127:    }
+        2:  128:    else if(index==length())
+        -:  129:    {
+        1:  130:        this->append(data);
+        -:  131:    }
+        -:  132:    else
+        -:  133:    {
+        -:  134:        //inserting at specific index
+        1:  135:        Node<T>* curr=this->head;
+        -:  136:
+       1*:  137:        for(int x=0;x<index-1;x++)
+        -:  138:        {
+    #####:  139:            curr=curr->next;
+        -:  140:        }
+        -:  141:
+        1:  142:        newnode->next=curr->next;
+        1:  143:        curr->next=newnode;
+        -:  144:    }
+        -:  145:
+        -:  146:}
+------------------
+        -:  147:
+        -:  148:template <class T>
+      104:  149:void CLinkedList<T>::remove(int index) {
+      104:  150:    if (!(index < 0 || index >= this->length() || this->head == NULL)) {
+      100:  151:        if (this->length() == 1) {
+       11:  152:            delete this->head;
+       11:  153:            this->head = NULL;
+       89:  154:        } else if (index == 0 && this->length() > 1) {
+       57:  155:            Node<T>* curr = this->head;
+      441:  156:            while (curr->next != this->head) {
+      384:  157:                curr = curr->next;
+        -:  158:            }
+       57:  159:            curr->next = this->head->next;
+       57:  160:            delete this->head;
+       57:  161:            this->head = curr->next;
+        -:  162:        } else {
+       32:  163:            int count = 0;
+       32:  164:            Node<T>* curr = this->head;
+      124:  165:            while (curr->next != this->head) {
+      124:  166:                if (count == index - 1) {
+       32:  167:                    Node<T>* temp = curr->next;
+       32:  168:                    curr->next = curr->next->next;
+       32:  169:                    delete temp;
+       32:  170:                    return;
+        -:  171:                }
+       92:  172:                curr = curr->next;
+       92:  173:                count++;
+        -:  174:            }
+        -:  175:        }
+        -:  176:    }
+        -:  177:}
+------------------
+_ZN11CLinkedListIsE6removeEi:
+       22:  149:void CLinkedList<T>::remove(int index) {
+       22:  150:    if (!(index < 0 || index >= this->length() || this->head == NULL)) {
+       21:  151:        if (this->length() == 1) {
+        3:  152:            delete this->head;
+        3:  153:            this->head = NULL;
+       18:  154:        } else if (index == 0 && this->length() > 1) {
+       11:  155:            Node<T>* curr = this->head;
+       74:  156:            while (curr->next != this->head) {
+       63:  157:                curr = curr->next;
+        -:  158:            }
+       11:  159:            curr->next = this->head->next;
+       11:  160:            delete this->head;
+       11:  161:            this->head = curr->next;
+        -:  162:        } else {
+        7:  163:            int count = 0;
+        7:  164:            Node<T>* curr = this->head;
+       27:  165:            while (curr->next != this->head) {
+       27:  166:                if (count == index - 1) {
+        7:  167:                    Node<T>* temp = curr->next;
+        7:  168:                    curr->next = curr->next->next;
+        7:  169:                    delete temp;
+        7:  170:                    return;
+        -:  171:                }
+       20:  172:                curr = curr->next;
+       20:  173:                count++;
+        -:  174:            }
+        -:  175:        }
+        -:  176:    }
+        -:  177:}
+------------------
+_ZN11CLinkedListIfE6removeEi:
+       22:  149:void CLinkedList<T>::remove(int index) {
+       22:  150:    if (!(index < 0 || index >= this->length() || this->head == NULL)) {
+       21:  151:        if (this->length() == 1) {
+        3:  152:            delete this->head;
+        3:  153:            this->head = NULL;
+       18:  154:        } else if (index == 0 && this->length() > 1) {
+       11:  155:            Node<T>* curr = this->head;
+       74:  156:            while (curr->next != this->head) {
+       63:  157:                curr = curr->next;
+        -:  158:            }
+       11:  159:            curr->next = this->head->next;
+       11:  160:            delete this->head;
+       11:  161:            this->head = curr->next;
+        -:  162:        } else {
+        7:  163:            int count = 0;
+        7:  164:            Node<T>* curr = this->head;
+       27:  165:            while (curr->next != this->head) {
+       27:  166:                if (count == index - 1) {
+        7:  167:                    Node<T>* temp = curr->next;
+        7:  168:                    curr->next = curr->next->next;
+        7:  169:                    delete temp;
+        7:  170:                    return;
+        -:  171:                }
+       20:  172:                curr = curr->next;
+       20:  173:                count++;
+        -:  174:            }
+        -:  175:        }
+        -:  176:    }
+        -:  177:}
+------------------
+_ZN11CLinkedListIdE6removeEi:
+       38:  149:void CLinkedList<T>::remove(int index) {
+       38:  150:    if (!(index < 0 || index >= this->length() || this->head == NULL)) {
+       37:  151:        if (this->length() == 1) {
+        2:  152:            delete this->head;
+        2:  153:            this->head = NULL;
+       35:  154:        } else if (index == 0 && this->length() > 1) {
+       24:  155:            Node<T>* curr = this->head;
+      219:  156:            while (curr->next != this->head) {
+      195:  157:                curr = curr->next;
+        -:  158:            }
+       24:  159:            curr->next = this->head->next;
+       24:  160:            delete this->head;
+       24:  161:            this->head = curr->next;
+        -:  162:        } else {
+       11:  163:            int count = 0;
+       11:  164:            Node<T>* curr = this->head;
+       43:  165:            while (curr->next != this->head) {
+       43:  166:                if (count == index - 1) {
+       11:  167:                    Node<T>* temp = curr->next;
+       11:  168:                    curr->next = curr->next->next;
+       11:  169:                    delete temp;
+       11:  170:                    return;
+        -:  171:                }
+       32:  172:                curr = curr->next;
+       32:  173:                count++;
+        -:  174:            }
+        -:  175:        }
+        -:  176:    }
+        -:  177:}
+------------------
+_ZN11CLinkedListIiE6removeEi:
+       22:  149:void CLinkedList<T>::remove(int index) {
+       22:  150:    if (!(index < 0 || index >= this->length() || this->head == NULL)) {
+       21:  151:        if (this->length() == 1) {
+        3:  152:            delete this->head;
+        3:  153:            this->head = NULL;
+       18:  154:        } else if (index == 0 && this->length() > 1) {
+       11:  155:            Node<T>* curr = this->head;
+       74:  156:            while (curr->next != this->head) {
+       63:  157:                curr = curr->next;
+        -:  158:            }
+       11:  159:            curr->next = this->head->next;
+       11:  160:            delete this->head;
+       11:  161:            this->head = curr->next;
+        -:  162:        } else {
+        7:  163:            int count = 0;
+        7:  164:            Node<T>* curr = this->head;
+       27:  165:            while (curr->next != this->head) {
+       27:  166:                if (count == index - 1) {
+        7:  167:                    Node<T>* temp = curr->next;
+        7:  168:                    curr->next = curr->next->next;
+        7:  169:                    delete temp;
+        7:  170:                    return;
+        -:  171:                }
+       20:  172:                curr = curr->next;
+       20:  173:                count++;
+        -:  174:            }
+        -:  175:        }
+        -:  176:    }
+        -:  177:}
+------------------
+        -:  178:
+        -:  179:/*template<class T>
+        -:  180:void CLinkedList<T>::remove(int index)
+        -:  181:{
+        -:  182:    if(index<0 || index>this->length() || index==this->length())
+        -:  183:    {
+        -:  184:        return;
+        -:  185:    }
+        -:  186:
+        -:  187:    if(index==0)
+        -:  188:    {
+        -:  189:        Node<T>* goner=this->head;
+        -:  190:        
+        -:  191:        if(head->next==this->head)
+        -:  192:        {
+        -:  193:            this->head=NULL;
+        -:  194:        }
+        -:  195:        else
+        -:  196:        {
+        -:  197:            Node<T>* curr=this->head;
+        -:  198:
+        -:  199:            while(curr->next != this->head)
+        -:  200:            {
+        -:  201:                curr=curr->next;
+        -:  202:            }
+        -:  203:            this->head=this->head->next;
+        -:  204:            curr->next=this->head;
+        -:  205:        }
+        -:  206:
+        -:  207:        delete goner;
+        -:  208:    }
+        -:  209:    else
+        -:  210:    {
+        -:  211:        Node<T>* curr=this->head;
+        -:  212:
+        -:  213:        for(int x=0;x<index-1;x++)
+        -:  214:        {
+        -:  215:            curr=curr->next;
+        -:  216:        }
+        -:  217:
+        -:  218:        Node<T>* goner=curr->next;
+        -:  219:        curr->next=goner->next;
+        -:  220:
+        -:  221:        int outie=length()-1;
+        -:  222:        if(index==outie)
+        -:  223:        {
+        -:  224:            this->head=curr;
+        -:  225:        }
+        -:  226:
+        -:  227:        delete goner;
+        -:  228:    }
+        -:  229:
+        -:  230:
+        -:  231:
+        -:  232:}*/
+        -:  233:
+        -:  234:template <class T>
+       22:  235:void CLinkedList<T>::removeElements(T data) {
+      22*:  236:    if(this->length() == 0 || this->head == NULL) return;
+        -:  237:
+       22:  238:    const int maxSize = this->length();
+       22:  239:    int indexes[maxSize];
+        -:  240:
+       22:  241:    int indexesTotal = 0, index = 0;
+       85:  242:    while(index < this->length()) {
+       63:  243:        if(this->get(index) == data) {
+       26:  244:            indexes[indexesTotal] = index;
+       26:  245:            indexesTotal++;
+        -:  246:        }
+       63:  247:        index++;
+        -:  248:    }
+        -:  249:
+       22:  250:    int count = 0, iterator = 0;
+       48:  251:    while(iterator < indexesTotal) {
+       26:  252:        this->remove(indexes[iterator] - count);
+       26:  253:        count++;
+       26:  254:        iterator++;
+        -:  255:    }
+       22:  256:}
+------------------
+_ZN11CLinkedListIsE14removeElementsEs:
+        5:  235:void CLinkedList<T>::removeElements(T data) {
+       5*:  236:    if(this->length() == 0 || this->head == NULL) return;
+        -:  237:
+        5:  238:    const int maxSize = this->length();
+        5:  239:    int indexes[maxSize];
+        -:  240:
+        5:  241:    int indexesTotal = 0, index = 0;
+       15:  242:    while(index < this->length()) {
+       10:  243:        if(this->get(index) == data) {
+        6:  244:            indexes[indexesTotal] = index;
+        6:  245:            indexesTotal++;
+        -:  246:        }
+       10:  247:        index++;
+        -:  248:    }
+        -:  249:
+        5:  250:    int count = 0, iterator = 0;
+       11:  251:    while(iterator < indexesTotal) {
+        6:  252:        this->remove(indexes[iterator] - count);
+        6:  253:        count++;
+        6:  254:        iterator++;
+        -:  255:    }
+        5:  256:}
+------------------
+_ZN11CLinkedListIfE14removeElementsEf:
+        5:  235:void CLinkedList<T>::removeElements(T data) {
+       5*:  236:    if(this->length() == 0 || this->head == NULL) return;
+        -:  237:
+        5:  238:    const int maxSize = this->length();
+        5:  239:    int indexes[maxSize];
+        -:  240:
+        5:  241:    int indexesTotal = 0, index = 0;
+       15:  242:    while(index < this->length()) {
+       10:  243:        if(this->get(index) == data) {
+        6:  244:            indexes[indexesTotal] = index;
+        6:  245:            indexesTotal++;
+        -:  246:        }
+       10:  247:        index++;
+        -:  248:    }
+        -:  249:
+        5:  250:    int count = 0, iterator = 0;
+       11:  251:    while(iterator < indexesTotal) {
+        6:  252:        this->remove(indexes[iterator] - count);
+        6:  253:        count++;
+        6:  254:        iterator++;
+        -:  255:    }
+        5:  256:}
+------------------
+_ZN11CLinkedListIdE14removeElementsEd:
+        7:  235:void CLinkedList<T>::removeElements(T data) {
+       7*:  236:    if(this->length() == 0 || this->head == NULL) return;
+        -:  237:
+        7:  238:    const int maxSize = this->length();
+        7:  239:    int indexes[maxSize];
+        -:  240:
+        7:  241:    int indexesTotal = 0, index = 0;
+       40:  242:    while(index < this->length()) {
+       33:  243:        if(this->get(index) == data) {
+        8:  244:            indexes[indexesTotal] = index;
+        8:  245:            indexesTotal++;
+        -:  246:        }
+       33:  247:        index++;
+        -:  248:    }
+        -:  249:
+        7:  250:    int count = 0, iterator = 0;
+       15:  251:    while(iterator < indexesTotal) {
+        8:  252:        this->remove(indexes[iterator] - count);
+        8:  253:        count++;
+        8:  254:        iterator++;
+        -:  255:    }
+        7:  256:}
+------------------
+_ZN11CLinkedListIiE14removeElementsEi:
+        5:  235:void CLinkedList<T>::removeElements(T data) {
+       5*:  236:    if(this->length() == 0 || this->head == NULL) return;
+        -:  237:
+        5:  238:    const int maxSize = this->length();
+        5:  239:    int indexes[maxSize];
+        -:  240:
+        5:  241:    int indexesTotal = 0, index = 0;
+       15:  242:    while(index < this->length()) {
+       10:  243:        if(this->get(index) == data) {
+        6:  244:            indexes[indexesTotal] = index;
+        6:  245:            indexesTotal++;
+        -:  246:        }
+       10:  247:        index++;
+        -:  248:    }
+        -:  249:
+        5:  250:    int count = 0, iterator = 0;
+       11:  251:    while(iterator < indexesTotal) {
+        6:  252:        this->remove(indexes[iterator] - count);
+        6:  253:        count++;
+        6:  254:        iterator++;
+        -:  255:    }
+        5:  256:}
+------------------
+        -:  257:
+        -:  258:/*template<class T>
+        -:  259:void CLinkedList<T>::removeElements(T data)
+        -:  260:{
+        -:  261:    if(this->head==NULL || this->length()==0)
+        -:  262:    {
+        -:  263:        return;
+        -:  264:    }
+        -:  265:
+        -:  266:    Node<T>* curr=this->head;
+        -:  267:    Node<T>* prev=NULL;
+        -:  268:
+        -:  269:    do
+        -:  270:    {
+        -:  271:
+        -:  272:     if(curr->data == data)
+        -:  273:     {
+        -:  274:        if(prev != NULL)
+        -:  275:        {
+        -:  276:            prev->next=curr->next;
+        -:  277:
+        -:  278:            delete curr;
+        -:  279:            curr=prev->next;
+        -:  280:        }
+        -:  281:        else if(curr==this->head)
+        -:  282:        {
+        -:  283:            this->head=curr->next;
+        -:  284:        
+        -:  285:        delete curr;
+        -:  286:        curr=this->head;
+        -:  287:        }
+        -:  288:     }
+        -:  289:     else
+        -:  290:     {
+        -:  291:        Node<T>* outie=this->head;
+        -:  292:        this->head=this->head->next;
+        -:  293:
+        -:  294:        if(outie==this->head)
+        -:  295:        {
+        -:  296:            this->head=NULL;
+        -:  297:        }
+        -:  298:        delete outie;
+        -:  299:        curr=this->head;
+        -:  300:     }
+        -:  301:     
+        -:  302:     
+        -:  303:    
+        -:  304:    
+        -:  305:        prev=curr;
+        -:  306:        if(curr!=NULL)
+        -:  307:        curr=curr->next;   
+        -:  308:    
+        -:  309:    }while(curr != this->head);
+        -:  310:    
+        -:  311:
+        -:  312:}*/
+        -:  313:template <class T>
+      101:  314:void CLinkedList<T>::print() const {
+      101:  315:    if (this->head == NULL) {
+       15:  316:        std::cout << "Empty\n";
+       15:  317:        return;
+        -:  318:    }
+        -:  319:
+       86:  320:    Node<T>* current = this->head;
+      341:  321:    while (current->next != this->head) {
+      255:  322:        std::cout << current->data << " -> ";
+      255:  323:        current = current->next;
+        -:  324:    }
+       86:  325:    std::cout << current->data << std::endl;
+        -:  326:}
+------------------
+_ZNK11CLinkedListIsE5printEv:
+       25:  314:void CLinkedList<T>::print() const {
+       25:  315:    if (this->head == NULL) {
+        4:  316:        std::cout << "Empty\n";
+        4:  317:        return;
+        -:  318:    }
+        -:  319:
+       21:  320:    Node<T>* current = this->head;
+       75:  321:    while (current->next != this->head) {
+       54:  322:        std::cout << current->data << " -> ";
+       54:  323:        current = current->next;
+        -:  324:    }
+       21:  325:    std::cout << current->data << std::endl;
+        -:  326:}
+------------------
+_ZNK11CLinkedListIfE5printEv:
+       25:  314:void CLinkedList<T>::print() const {
+       25:  315:    if (this->head == NULL) {
+        4:  316:        std::cout << "Empty\n";
+        4:  317:        return;
+        -:  318:    }
+        -:  319:
+       21:  320:    Node<T>* current = this->head;
+       75:  321:    while (current->next != this->head) {
+       54:  322:        std::cout << current->data << " -> ";
+       54:  323:        current = current->next;
+        -:  324:    }
+       21:  325:    std::cout << current->data << std::endl;
+        -:  326:}
+------------------
+_ZNK11CLinkedListIdE5printEv:
+       26:  314:void CLinkedList<T>::print() const {
+       26:  315:    if (this->head == NULL) {
+        3:  316:        std::cout << "Empty\n";
+        3:  317:        return;
+        -:  318:    }
+        -:  319:
+       23:  320:    Node<T>* current = this->head;
+      116:  321:    while (current->next != this->head) {
+       93:  322:        std::cout << current->data << " -> ";
+       93:  323:        current = current->next;
+        -:  324:    }
+       23:  325:    std::cout << current->data << std::endl;
+        -:  326:}
+------------------
+_ZNK11CLinkedListIiE5printEv:
+       25:  314:void CLinkedList<T>::print() const {
+       25:  315:    if (this->head == NULL) {
+        4:  316:        std::cout << "Empty\n";
+        4:  317:        return;
+        -:  318:    }
+        -:  319:
+       21:  320:    Node<T>* current = this->head;
+       75:  321:    while (current->next != this->head) {
+       54:  322:        std::cout << current->data << " -> ";
+       54:  323:        current = current->next;
+        -:  324:    }
+       21:  325:    std::cout << current->data << std::endl;
+        -:  326:}
+------------------
+        -:  327:
+        -:  328:/*
+        -:  329:template<class T>
+        -:  330:void CLinkedList<T>::print()const
+        -:  331:{
+        -:  332:    Node<T>* temp=this->head;
+        -:  333:
+        -:  334:    if(this->head != NULL)
+        -:  335:    {
+        -:  336:        do
+        -:  337:        {
+        -:  338:            std::cout<<temp->data;
+        -:  339:            std::cout<<"->";
+        -:  340:
+        -:  341:            
+        -:  342:            temp=temp->next;
+        -:  343:            if(temp == NULL)
+        -:  344:            {
+        -:  345:                break;
+        -:  346:            }
+        -:  347:            
+        -:  348:        } while (temp!= this->head );
+        -:  349:        std::cout<<"\n";
+        -:  350:        
+        -:  351:    }
+        -:  352:}*/
+        -:  353:
+        -:  354:template <class T>
+        4:  355:void CLinkedList<T>::reverse() {
+        4:  356:    if (this->head != NULL) {
+        4:  357:        Node<T>* prev = NULL;
+        4:  358:        Node<T>* curr = this->head;
+        4:  359:        Node<T>* next = NULL;
+       12:  360:        while (curr->next != this->head) {
+        8:  361:            next = curr->next;
+        8:  362:            curr->next = prev;
+        8:  363:            prev = curr;
+        8:  364:            curr = next;
+        -:  365:        }
+        4:  366:        curr->next = prev;
+        4:  367:        this->head->next = curr;
+        4:  368:        this->head = curr;
+        -:  369:    }
+        4:  370:}
+------------------
+_ZN11CLinkedListIiE7reverseEv:
+        1:  355:void CLinkedList<T>::reverse() {
+        1:  356:    if (this->head != NULL) {
+        1:  357:        Node<T>* prev = NULL;
+        1:  358:        Node<T>* curr = this->head;
+        1:  359:        Node<T>* next = NULL;
+        3:  360:        while (curr->next != this->head) {
+        2:  361:            next = curr->next;
+        2:  362:            curr->next = prev;
+        2:  363:            prev = curr;
+        2:  364:            curr = next;
+        -:  365:        }
+        1:  366:        curr->next = prev;
+        1:  367:        this->head->next = curr;
+        1:  368:        this->head = curr;
+        -:  369:    }
+        1:  370:}
+------------------
+_ZN11CLinkedListIsE7reverseEv:
+        1:  355:void CLinkedList<T>::reverse() {
+        1:  356:    if (this->head != NULL) {
+        1:  357:        Node<T>* prev = NULL;
+        1:  358:        Node<T>* curr = this->head;
+        1:  359:        Node<T>* next = NULL;
+        3:  360:        while (curr->next != this->head) {
+        2:  361:            next = curr->next;
+        2:  362:            curr->next = prev;
+        2:  363:            prev = curr;
+        2:  364:            curr = next;
+        -:  365:        }
+        1:  366:        curr->next = prev;
+        1:  367:        this->head->next = curr;
+        1:  368:        this->head = curr;
+        -:  369:    }
+        1:  370:}
+------------------
+_ZN11CLinkedListIfE7reverseEv:
+        1:  355:void CLinkedList<T>::reverse() {
+        1:  356:    if (this->head != NULL) {
+        1:  357:        Node<T>* prev = NULL;
+        1:  358:        Node<T>* curr = this->head;
+        1:  359:        Node<T>* next = NULL;
+        3:  360:        while (curr->next != this->head) {
+        2:  361:            next = curr->next;
+        2:  362:            curr->next = prev;
+        2:  363:            prev = curr;
+        2:  364:            curr = next;
+        -:  365:        }
+        1:  366:        curr->next = prev;
+        1:  367:        this->head->next = curr;
+        1:  368:        this->head = curr;
+        -:  369:    }
+        1:  370:}
+------------------
+_ZN11CLinkedListIdE7reverseEv:
+        1:  355:void CLinkedList<T>::reverse() {
+        1:  356:    if (this->head != NULL) {
+        1:  357:        Node<T>* prev = NULL;
+        1:  358:        Node<T>* curr = this->head;
+        1:  359:        Node<T>* next = NULL;
+        3:  360:        while (curr->next != this->head) {
+        2:  361:            next = curr->next;
+        2:  362:            curr->next = prev;
+        2:  363:            prev = curr;
+        2:  364:            curr = next;
+        -:  365:        }
+        1:  366:        curr->next = prev;
+        1:  367:        this->head->next = curr;
+        1:  368:        this->head = curr;
+        -:  369:    }
+        1:  370:}
+------------------
+        -:  371:
+        -:  372:/*template<class T>
+        -:  373:void CLinkedList<T>::reverse()
+        -:  374:{
+        -:  375:    if(this->head!=NULL)
+        -:  376:    {
+        -:  377:        Node<T>* prev=NULL;
+        -:  378:        Node<T>* curr=this->head;
+        -:  379:        Node<T>* next=NULL;
+        -:  380:
+        -:  381:        
+        -:  382:
+        -:  383:        do
+        -:  384:        {
+        -:  385:            next=curr->next;
+        -:  386:            curr->next=prev;
+        -:  387:            prev=curr;
+        -:  388:            curr=next;
+        -:  389:        } while (curr!=this->head);
+        -:  390:        this->head=prev;
+        -:  391:    }
+        -:  392:}*/
+        -:  393:
+        -:  394:/*template <class T>
+        -:  395:void CLinkedList<T>::clear() {
+        -:  396:    if (this->head != NULL) {
+        -:  397:        Node<T>* iterator = this->head;
+        -:  398:        while (iterator->next != this->head) {
+        -:  399:            Node<T>* temp = current;
+        -:  400:            iterator = iterator->next;
+        -:  401:            delete temp;
+        -:  402:        }
+        -:  403:        delete iterator;
+        -:  404:        this->head = NULL;
+        -:  405:    }
+        -:  406:}*/
+        -:  407:
+        -:  408:template<class T>
+       13:  409:void CLinkedList<T>::clear()
+        -:  410:{
+       13:  411:    if(!this->head)
+        -:  412:    {
+        4:  413:        return;
+        -:  414:    }
+        -:  415:
+        9:  416:    Node<T>* curr=this->head;
+        -:  417:    Node<T>* next;
+        -:  418:
+        -:  419:    do
+        -:  420:    {
+       36:  421:        next=curr->next;
+       36:  422:        delete curr;
+       36:  423:        curr=next;
+       36:  424:    } while (curr != this->head);
+        -:  425:    
+        9:  426:    this->head=NULL;
+        -:  427:}
+------------------
+_ZN11CLinkedListIiE5clearEv:
+        3:  409:void CLinkedList<T>::clear()
+        -:  410:{
+        3:  411:    if(!this->head)
+        -:  412:    {
+        1:  413:        return;
+        -:  414:    }
+        -:  415:
+        2:  416:    Node<T>* curr=this->head;
+        -:  417:    Node<T>* next;
+        -:  418:
+        -:  419:    do
+        -:  420:    {
+        7:  421:        next=curr->next;
+        7:  422:        delete curr;
+        7:  423:        curr=next;
+        7:  424:    } while (curr != this->head);
+        -:  425:    
+        2:  426:    this->head=NULL;
+        -:  427:}
+------------------
+_ZN11CLinkedListIsE5clearEv:
+        3:  409:void CLinkedList<T>::clear()
+        -:  410:{
+        3:  411:    if(!this->head)
+        -:  412:    {
+        1:  413:        return;
+        -:  414:    }
+        -:  415:
+        2:  416:    Node<T>* curr=this->head;
+        -:  417:    Node<T>* next;
+        -:  418:
+        -:  419:    do
+        -:  420:    {
+        7:  421:        next=curr->next;
+        7:  422:        delete curr;
+        7:  423:        curr=next;
+        7:  424:    } while (curr != this->head);
+        -:  425:    
+        2:  426:    this->head=NULL;
+        -:  427:}
+------------------
+_ZN11CLinkedListIfE5clearEv:
+        3:  409:void CLinkedList<T>::clear()
+        -:  410:{
+        3:  411:    if(!this->head)
+        -:  412:    {
+        1:  413:        return;
+        -:  414:    }
+        -:  415:
+        2:  416:    Node<T>* curr=this->head;
+        -:  417:    Node<T>* next;
+        -:  418:
+        -:  419:    do
+        -:  420:    {
+        7:  421:        next=curr->next;
+        7:  422:        delete curr;
+        7:  423:        curr=next;
+        7:  424:    } while (curr != this->head);
+        -:  425:    
+        2:  426:    this->head=NULL;
+        -:  427:}
+------------------
+_ZN11CLinkedListIdE5clearEv:
+        4:  409:void CLinkedList<T>::clear()
+        -:  410:{
+        4:  411:    if(!this->head)
+        -:  412:    {
+        1:  413:        return;
+        -:  414:    }
+        -:  415:
+        3:  416:    Node<T>* curr=this->head;
+        -:  417:    Node<T>* next;
+        -:  418:
+        -:  419:    do
+        -:  420:    {
+       15:  421:        next=curr->next;
+       15:  422:        delete curr;
+       15:  423:        curr=next;
+       15:  424:    } while (curr != this->head);
+        -:  425:    
+        3:  426:    this->head=NULL;
+        -:  427:}
+------------------
+        -:  428:
+        -:  429:template<class T>
+      785:  430:int CLinkedList<T>::length()const
+        -:  431:{
+      785:  432:     int lengthy=0;
+      785:  433:    if (this->head == NULL ) {
+        -:  434:       
+        4:  435:        return 0;
+        -:  436:    }
+        -:  437:
+      781:  438:    if(this->head->next == this->head)
+        -:  439:    {
+       57:  440:        return 1;
+        -:  441:    }
+        -:  442:
+        -:  443:    
+      724:  444:        lengthy=1;
+        -:  445:    
+        -:  446:
+      724:  447:    Node<T>* current = this->head;
+     3827:  448:    while (current->next != this->head) {
+        -:  449:        
+     3103:  450:        current = current->next;
+     3103:  451:        lengthy++;
+        -:  452:    
+        -:  453:    
+        -:  454:
+        -:  455:    // if(current->next == this->head)
+        -:  456:    // {
+        -:  457:    //     lengthy++;
+        -:  458:    // }
+        -:  459:    }
+      724:  460:     return lengthy;
+        -:  461:    
+        -:  462:
+        -:  463:}
+------------------
+_ZNK11CLinkedListIiE6lengthEv:
+      172:  430:int CLinkedList<T>::length()const
+        -:  431:{
+      172:  432:     int lengthy=0;
+      172:  433:    if (this->head == NULL ) {
+        -:  434:       
+        1:  435:        return 0;
+        -:  436:    }
+        -:  437:
+      171:  438:    if(this->head->next == this->head)
+        -:  439:    {
+       16:  440:        return 1;
+        -:  441:    }
+        -:  442:
+        -:  443:    
+      155:  444:        lengthy=1;
+        -:  445:    
+        -:  446:
+      155:  447:    Node<T>* current = this->head;
+      656:  448:    while (current->next != this->head) {
+        -:  449:        
+      501:  450:        current = current->next;
+      501:  451:        lengthy++;
+        -:  452:    
+        -:  453:    
+        -:  454:
+        -:  455:    // if(current->next == this->head)
+        -:  456:    // {
+        -:  457:    //     lengthy++;
+        -:  458:    // }
+        -:  459:    }
+      155:  460:     return lengthy;
+        -:  461:    
+        -:  462:
+        -:  463:}
+------------------
+_ZNK11CLinkedListIsE6lengthEv:
+      172:  430:int CLinkedList<T>::length()const
+        -:  431:{
+      172:  432:     int lengthy=0;
+      172:  433:    if (this->head == NULL ) {
+        -:  434:       
+        1:  435:        return 0;
+        -:  436:    }
+        -:  437:
+      171:  438:    if(this->head->next == this->head)
+        -:  439:    {
+       16:  440:        return 1;
+        -:  441:    }
+        -:  442:
+        -:  443:    
+      155:  444:        lengthy=1;
+        -:  445:    
+        -:  446:
+      155:  447:    Node<T>* current = this->head;
+      656:  448:    while (current->next != this->head) {
+        -:  449:        
+      501:  450:        current = current->next;
+      501:  451:        lengthy++;
+        -:  452:    
+        -:  453:    
+        -:  454:
+        -:  455:    // if(current->next == this->head)
+        -:  456:    // {
+        -:  457:    //     lengthy++;
+        -:  458:    // }
+        -:  459:    }
+      155:  460:     return lengthy;
+        -:  461:    
+        -:  462:
+        -:  463:}
+------------------
+_ZNK11CLinkedListIfE6lengthEv:
+      172:  430:int CLinkedList<T>::length()const
+        -:  431:{
+      172:  432:     int lengthy=0;
+      172:  433:    if (this->head == NULL ) {
+        -:  434:       
+        1:  435:        return 0;
+        -:  436:    }
+        -:  437:
+      171:  438:    if(this->head->next == this->head)
+        -:  439:    {
+       16:  440:        return 1;
+        -:  441:    }
+        -:  442:
+        -:  443:    
+      155:  444:        lengthy=1;
+        -:  445:    
+        -:  446:
+      155:  447:    Node<T>* current = this->head;
+      656:  448:    while (current->next != this->head) {
+        -:  449:        
+      501:  450:        current = current->next;
+      501:  451:        lengthy++;
+        -:  452:    
+        -:  453:    
+        -:  454:
+        -:  455:    // if(current->next == this->head)
+        -:  456:    // {
+        -:  457:    //     lengthy++;
+        -:  458:    // }
+        -:  459:    }
+      155:  460:     return lengthy;
+        -:  461:    
+        -:  462:
+        -:  463:}
+------------------
+_ZNK11CLinkedListIdE6lengthEv:
+      269:  430:int CLinkedList<T>::length()const
+        -:  431:{
+      269:  432:     int lengthy=0;
+      269:  433:    if (this->head == NULL ) {
+        -:  434:       
+        1:  435:        return 0;
+        -:  436:    }
+        -:  437:
+      268:  438:    if(this->head->next == this->head)
+        -:  439:    {
+        9:  440:        return 1;
+        -:  441:    }
+        -:  442:
+        -:  443:    
+      259:  444:        lengthy=1;
+        -:  445:    
+        -:  446:
+      259:  447:    Node<T>* current = this->head;
+     1859:  448:    while (current->next != this->head) {
+        -:  449:        
+     1600:  450:        current = current->next;
+     1600:  451:        lengthy++;
+        -:  452:    
+        -:  453:    
+        -:  454:
+        -:  455:    // if(current->next == this->head)
+        -:  456:    // {
+        -:  457:    //     lengthy++;
+        -:  458:    // }
+        -:  459:    }
+      259:  460:     return lengthy;
+        -:  461:    
+        -:  462:
+        -:  463:}
+------------------
+        -:  464:
+        -:  465:template <class T>
+      206:  466:T CLinkedList<T>::get(int index) const {
+     206*:  467:    if (index >= this->length() || index < 0) {
+    #####:  468:        return T();
+        -:  469:    } else {
+      206:  470:        int count = 0;
+      206:  471:        Node<T>* current = this->head;
+      606:  472:        while (current->next != this->head) {
+      542:  473:            if (count == index) {
+      142:  474:                return current->data;
+        -:  475:            }
+        -:  476:            
+      400:  477:            current = current->next;
+      400:  478:            count++;
+        -:  479:        }
+       64:  480:        T result = current->data;
+       64:  481:        return result;
+        -:  482:    }
+        -:  483:}
+------------------
+_ZNK11CLinkedListIsE3getEi:
+       44:  466:T CLinkedList<T>::get(int index) const {
+      44*:  467:    if (index >= this->length() || index < 0) {
+    #####:  468:        return T();
+        -:  469:    } else {
+       44:  470:        int count = 0;
+       44:  471:        Node<T>* current = this->head;
+      106:  472:        while (current->next != this->head) {
+       89:  473:            if (count == index) {
+       27:  474:                return current->data;
+        -:  475:            }
+        -:  476:            
+       62:  477:            current = current->next;
+       62:  478:            count++;
+        -:  479:        }
+       17:  480:        T result = current->data;
+       17:  481:        return result;
+        -:  482:    }
+        -:  483:}
+------------------
+_ZNK11CLinkedListIfE3getEi:
+       44:  466:T CLinkedList<T>::get(int index) const {
+      44*:  467:    if (index >= this->length() || index < 0) {
+    #####:  468:        return T();
+        -:  469:    } else {
+       44:  470:        int count = 0;
+       44:  471:        Node<T>* current = this->head;
+      106:  472:        while (current->next != this->head) {
+       89:  473:            if (count == index) {
+       27:  474:                return current->data;
+        -:  475:            }
+        -:  476:            
+       62:  477:            current = current->next;
+       62:  478:            count++;
+        -:  479:        }
+       17:  480:        T result = current->data;
+       17:  481:        return result;
+        -:  482:    }
+        -:  483:}
+------------------
+_ZNK11CLinkedListIdE3getEi:
+       74:  466:T CLinkedList<T>::get(int index) const {
+      74*:  467:    if (index >= this->length() || index < 0) {
+    #####:  468:        return T();
+        -:  469:    } else {
+       74:  470:        int count = 0;
+       74:  471:        Node<T>* current = this->head;
+      288:  472:        while (current->next != this->head) {
+      275:  473:            if (count == index) {
+       61:  474:                return current->data;
+        -:  475:            }
+        -:  476:            
+      214:  477:            current = current->next;
+      214:  478:            count++;
+        -:  479:        }
+       13:  480:        T result = current->data;
+       13:  481:        return result;
+        -:  482:    }
+        -:  483:}
+------------------
+_ZNK11CLinkedListIiE3getEi:
+       44:  466:T CLinkedList<T>::get(int index) const {
+      44*:  467:    if (index >= this->length() || index < 0) {
+    #####:  468:        return T();
+        -:  469:    } else {
+       44:  470:        int count = 0;
+       44:  471:        Node<T>* current = this->head;
+      106:  472:        while (current->next != this->head) {
+       89:  473:            if (count == index) {
+       27:  474:                return current->data;
+        -:  475:            }
+        -:  476:            
+       62:  477:            current = current->next;
+       62:  478:            count++;
+        -:  479:        }
+       17:  480:        T result = current->data;
+       17:  481:        return result;
+        -:  482:    }
+        -:  483:}
+------------------
+        -:  484:/*template<class T>
+        -:  485:T CLinkedList<T>::get(int index)const
+        -:  486:{
+        -:  487:    if(!head || index>this->length() || index==this->length() || index<0)
+        -:  488:    {
+        -:  489:        return T();
+        -:  490:    }
+        -:  491:
+        -:  492:    Node<T>* curr=this->head;
+        -:  493:
+        -:  494:    int idx=0;
+        -:  495:
+        -:  496:    while (curr)
+        -:  497:    {
+        -:  498:        if(idx==index)
+        -:  499:        {
+        -:  500:            return curr->data;
+        -:  501:        }
+        -:  502:        curr=curr->next;
+        -:  503:
+        -:  504:        if(curr==this->head)
+        -:  505:        {
+        -:  506:            break;
+        -:  507:        }
+        -:  508:        
+        -:  509:        idx++;
+        -:  510:    } 
+        -:  511:
+        -:  512:    return T();
+        -:  513:    
+        -:  514:}*/
+        -:  515:
+        -:  516:template<class T>
+       65:  517:T CLinkedList<T>::operator[](int index)const
+        -:  518:{
+       65:  519:    return this->get(index);
+        -:  520:}
+------------------
+_ZNK11CLinkedListIsEixEi:
+       15:  517:T CLinkedList<T>::operator[](int index)const
+        -:  518:{
+       15:  519:    return this->get(index);
+        -:  520:}
+------------------
+_ZNK11CLinkedListIdEixEi:
+       20:  517:T CLinkedList<T>::operator[](int index)const
+        -:  518:{
+       20:  519:    return this->get(index);
+        -:  520:}
+------------------
+_ZNK11CLinkedListIfEixEi:
+       15:  517:T CLinkedList<T>::operator[](int index)const
+        -:  518:{
+       15:  519:    return this->get(index);
+        -:  520:}
+------------------
+_ZNK11CLinkedListIiEixEi:
+       15:  517:T CLinkedList<T>::operator[](int index)const
+        -:  518:{
+       15:  519:    return this->get(index);
+        -:  520:}
+------------------
+        -:  521:
+        -:  522:template<class T>
+       20:  523:void CLinkedList<T>::filter(std::string op,T query)
+        -:  524:{
+        -:  525:    /*if(this->head == NULL)
+        -:  526:    {
+        -:  527:        return;
+        -:  528:    }
+        -:  529:
+        -:  530:    Node<T>* curr=this->head;
+        -:  531:    Node<T>* prev=NULL;
+        -:  532:
+        -:  533:    do
+        -:  534:    {
+        -:  535:        bool keep=false;
+        -:  536:
+        -:  537:        if(op==">" && curr->data >query)
+        -:  538:        {
+        -:  539:            keep=true;
+        -:  540:        }
+        -:  541:        else if(op=="<" && curr->data <query)
+        -:  542:        {
+        -:  543:            keep=true;
+        -:  544:        }
+        -:  545:        else if(op=="==" && curr->data ==query)
+        -:  546:        {
+        -:  547:            keep=true;
+        -:  548:        }
+        -:  549:        else if(op=="!=" && curr->data !=query)
+        -:  550:        {
+        -:  551:            keep=true;
+        -:  552:        }
+        -:  553:        else if(op==">=" && curr->data >=query)
+        -:  554:        {
+        -:  555:            keep=true;
+        -:  556:        }
+        -:  557:        else if(op=="<=" && curr->data <=query)
+        -:  558:        {
+        -:  559:            keep=true;
+        -:  560:        }
+        -:  561:
+        -:  562:
+        -:  563:        if(keep==true)
+        -:  564:        {
+        -:  565:            prev=curr;
+        -:  566:            curr=curr->next;
+        -:  567:        }
+        -:  568:        else
+        -:  569:        {
+        -:  570:            if(prev !=NULL)
+        -:  571:            {
+        -:  572:                prev->next=curr->next;
+        -:  573:
+        -:  574:                if(curr==this->head)
+        -:  575:                {
+        -:  576:                    this->head=curr->next;
+        -:  577:                }
+        -:  578:
+        -:  579:                Node<T>* temp=curr;
+        -:  580:                curr=curr->next;
+        -:  581:                delete temp;
+        -:  582:            }
+        -:  583:            else
+        -:  584:            {
+        -:  585:                Node<T>* goner=this->head;
+        -:  586:                this->head=this->head->next;
+        -:  587:                
+        -:  588:                if(goner==this->head)
+        -:  589:                {
+        -:  590:                    this->head=NULL;
+        -:  591:                }
+        -:  592:
+        -:  593:                delete goner;
+        -:  594:                curr=this->head;
+        -:  595:
+        -:  596:            }
+        -:  597:        }
+        -:  598:
+        -:  599:    } while (curr!=this->head);*/
+        -:  600:    
+       20:  601:}
+------------------
+_ZN11CLinkedListIiE6filterENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi:
+        5:  523:void CLinkedList<T>::filter(std::string op,T query)
+        -:  524:{
+        -:  525:    /*if(this->head == NULL)
+        -:  526:    {
+        -:  527:        return;
+        -:  528:    }
+        -:  529:
+        -:  530:    Node<T>* curr=this->head;
+        -:  531:    Node<T>* prev=NULL;
+        -:  532:
+        -:  533:    do
+        -:  534:    {
+        -:  535:        bool keep=false;
+        -:  536:
+        -:  537:        if(op==">" && curr->data >query)
+        -:  538:        {
+        -:  539:            keep=true;
+        -:  540:        }
+        -:  541:        else if(op=="<" && curr->data <query)
+        -:  542:        {
+        -:  543:            keep=true;
+        -:  544:        }
+        -:  545:        else if(op=="==" && curr->data ==query)
+        -:  546:        {
+        -:  547:            keep=true;
+        -:  548:        }
+        -:  549:        else if(op=="!=" && curr->data !=query)
+        -:  550:        {
+        -:  551:            keep=true;
+        -:  552:        }
+        -:  553:        else if(op==">=" && curr->data >=query)
+        -:  554:        {
+        -:  555:            keep=true;
+        -:  556:        }
+        -:  557:        else if(op=="<=" && curr->data <=query)
+        -:  558:        {
+        -:  559:            keep=true;
+        -:  560:        }
+        -:  561:
+        -:  562:
+        -:  563:        if(keep==true)
+        -:  564:        {
+        -:  565:            prev=curr;
+        -:  566:            curr=curr->next;
+        -:  567:        }
+        -:  568:        else
+        -:  569:        {
+        -:  570:            if(prev !=NULL)
+        -:  571:            {
+        -:  572:                prev->next=curr->next;
+        -:  573:
+        -:  574:                if(curr==this->head)
+        -:  575:                {
+        -:  576:                    this->head=curr->next;
+        -:  577:                }
+        -:  578:
+        -:  579:                Node<T>* temp=curr;
+        -:  580:                curr=curr->next;
+        -:  581:                delete temp;
+        -:  582:            }
+        -:  583:            else
+        -:  584:            {
+        -:  585:                Node<T>* goner=this->head;
+        -:  586:                this->head=this->head->next;
+        -:  587:                
+        -:  588:                if(goner==this->head)
+        -:  589:                {
+        -:  590:                    this->head=NULL;
+        -:  591:                }
+        -:  592:
+        -:  593:                delete goner;
+        -:  594:                curr=this->head;
+        -:  595:
+        -:  596:            }
+        -:  597:        }
+        -:  598:
+        -:  599:    } while (curr!=this->head);*/
+        -:  600:    
+        5:  601:}
+------------------
+_ZN11CLinkedListIsE6filterENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEs:
+        5:  523:void CLinkedList<T>::filter(std::string op,T query)
+        -:  524:{
+        -:  525:    /*if(this->head == NULL)
+        -:  526:    {
+        -:  527:        return;
+        -:  528:    }
+        -:  529:
+        -:  530:    Node<T>* curr=this->head;
+        -:  531:    Node<T>* prev=NULL;
+        -:  532:
+        -:  533:    do
+        -:  534:    {
+        -:  535:        bool keep=false;
+        -:  536:
+        -:  537:        if(op==">" && curr->data >query)
+        -:  538:        {
+        -:  539:            keep=true;
+        -:  540:        }
+        -:  541:        else if(op=="<" && curr->data <query)
+        -:  542:        {
+        -:  543:            keep=true;
+        -:  544:        }
+        -:  545:        else if(op=="==" && curr->data ==query)
+        -:  546:        {
+        -:  547:            keep=true;
+        -:  548:        }
+        -:  549:        else if(op=="!=" && curr->data !=query)
+        -:  550:        {
+        -:  551:            keep=true;
+        -:  552:        }
+        -:  553:        else if(op==">=" && curr->data >=query)
+        -:  554:        {
+        -:  555:            keep=true;
+        -:  556:        }
+        -:  557:        else if(op=="<=" && curr->data <=query)
+        -:  558:        {
+        -:  559:            keep=true;
+        -:  560:        }
+        -:  561:
+        -:  562:
+        -:  563:        if(keep==true)
+        -:  564:        {
+        -:  565:            prev=curr;
+        -:  566:            curr=curr->next;
+        -:  567:        }
+        -:  568:        else
+        -:  569:        {
+        -:  570:            if(prev !=NULL)
+        -:  571:            {
+        -:  572:                prev->next=curr->next;
+        -:  573:
+        -:  574:                if(curr==this->head)
+        -:  575:                {
+        -:  576:                    this->head=curr->next;
+        -:  577:                }
+        -:  578:
+        -:  579:                Node<T>* temp=curr;
+        -:  580:                curr=curr->next;
+        -:  581:                delete temp;
+        -:  582:            }
+        -:  583:            else
+        -:  584:            {
+        -:  585:                Node<T>* goner=this->head;
+        -:  586:                this->head=this->head->next;
+        -:  587:                
+        -:  588:                if(goner==this->head)
+        -:  589:                {
+        -:  590:                    this->head=NULL;
+        -:  591:                }
+        -:  592:
+        -:  593:                delete goner;
+        -:  594:                curr=this->head;
+        -:  595:
+        -:  596:            }
+        -:  597:        }
+        -:  598:
+        -:  599:    } while (curr!=this->head);*/
+        -:  600:    
+        5:  601:}
+------------------
+_ZN11CLinkedListIfE6filterENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEf:
+        5:  523:void CLinkedList<T>::filter(std::string op,T query)
+        -:  524:{
+        -:  525:    /*if(this->head == NULL)
+        -:  526:    {
+        -:  527:        return;
+        -:  528:    }
+        -:  529:
+        -:  530:    Node<T>* curr=this->head;
+        -:  531:    Node<T>* prev=NULL;
+        -:  532:
+        -:  533:    do
+        -:  534:    {
+        -:  535:        bool keep=false;
+        -:  536:
+        -:  537:        if(op==">" && curr->data >query)
+        -:  538:        {
+        -:  539:            keep=true;
+        -:  540:        }
+        -:  541:        else if(op=="<" && curr->data <query)
+        -:  542:        {
+        -:  543:            keep=true;
+        -:  544:        }
+        -:  545:        else if(op=="==" && curr->data ==query)
+        -:  546:        {
+        -:  547:            keep=true;
+        -:  548:        }
+        -:  549:        else if(op=="!=" && curr->data !=query)
+        -:  550:        {
+        -:  551:            keep=true;
+        -:  552:        }
+        -:  553:        else if(op==">=" && curr->data >=query)
+        -:  554:        {
+        -:  555:            keep=true;
+        -:  556:        }
+        -:  557:        else if(op=="<=" && curr->data <=query)
+        -:  558:        {
+        -:  559:            keep=true;
+        -:  560:        }
+        -:  561:
+        -:  562:
+        -:  563:        if(keep==true)
+        -:  564:        {
+        -:  565:            prev=curr;
+        -:  566:            curr=curr->next;
+        -:  567:        }
+        -:  568:        else
+        -:  569:        {
+        -:  570:            if(prev !=NULL)
+        -:  571:            {
+        -:  572:                prev->next=curr->next;
+        -:  573:
+        -:  574:                if(curr==this->head)
+        -:  575:                {
+        -:  576:                    this->head=curr->next;
+        -:  577:                }
+        -:  578:
+        -:  579:                Node<T>* temp=curr;
+        -:  580:                curr=curr->next;
+        -:  581:                delete temp;
+        -:  582:            }
+        -:  583:            else
+        -:  584:            {
+        -:  585:                Node<T>* goner=this->head;
+        -:  586:                this->head=this->head->next;
+        -:  587:                
+        -:  588:                if(goner==this->head)
+        -:  589:                {
+        -:  590:                    this->head=NULL;
+        -:  591:                }
+        -:  592:
+        -:  593:                delete goner;
+        -:  594:                curr=this->head;
+        -:  595:
+        -:  596:            }
+        -:  597:        }
+        -:  598:
+        -:  599:    } while (curr!=this->head);*/
+        -:  600:    
+        5:  601:}
+------------------
+_ZN11CLinkedListIdE6filterENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEd:
+        5:  523:void CLinkedList<T>::filter(std::string op,T query)
+        -:  524:{
+        -:  525:    /*if(this->head == NULL)
+        -:  526:    {
+        -:  527:        return;
+        -:  528:    }
+        -:  529:
+        -:  530:    Node<T>* curr=this->head;
+        -:  531:    Node<T>* prev=NULL;
+        -:  532:
+        -:  533:    do
+        -:  534:    {
+        -:  535:        bool keep=false;
+        -:  536:
+        -:  537:        if(op==">" && curr->data >query)
+        -:  538:        {
+        -:  539:            keep=true;
+        -:  540:        }
+        -:  541:        else if(op=="<" && curr->data <query)
+        -:  542:        {
+        -:  543:            keep=true;
+        -:  544:        }
+        -:  545:        else if(op=="==" && curr->data ==query)
+        -:  546:        {
+        -:  547:            keep=true;
+        -:  548:        }
+        -:  549:        else if(op=="!=" && curr->data !=query)
+        -:  550:        {
+        -:  551:            keep=true;
+        -:  552:        }
+        -:  553:        else if(op==">=" && curr->data >=query)
+        -:  554:        {
+        -:  555:            keep=true;
+        -:  556:        }
+        -:  557:        else if(op=="<=" && curr->data <=query)
+        -:  558:        {
+        -:  559:            keep=true;
+        -:  560:        }
+        -:  561:
+        -:  562:
+        -:  563:        if(keep==true)
+        -:  564:        {
+        -:  565:            prev=curr;
+        -:  566:            curr=curr->next;
+        -:  567:        }
+        -:  568:        else
+        -:  569:        {
+        -:  570:            if(prev !=NULL)
+        -:  571:            {
+        -:  572:                prev->next=curr->next;
+        -:  573:
+        -:  574:                if(curr==this->head)
+        -:  575:                {
+        -:  576:                    this->head=curr->next;
+        -:  577:                }
+        -:  578:
+        -:  579:                Node<T>* temp=curr;
+        -:  580:                curr=curr->next;
+        -:  581:                delete temp;
+        -:  582:            }
+        -:  583:            else
+        -:  584:            {
+        -:  585:                Node<T>* goner=this->head;
+        -:  586:                this->head=this->head->next;
+        -:  587:                
+        -:  588:                if(goner==this->head)
+        -:  589:                {
+        -:  590:                    this->head=NULL;
+        -:  591:                }
+        -:  592:
+        -:  593:                delete goner;
+        -:  594:                curr=this->head;
+        -:  595:
+        -:  596:            }
+        -:  597:        }
+        -:  598:
+        -:  599:    } while (curr!=this->head);*/
+        -:  600:    
+        5:  601:}
+------------------
+        -:  602:
+        -:  603:template <class T>
+        4:  604:void CLinkedList<T>::swap(int index1, int index2) {
+       4*:  605:    if (index1 >= this->length() || index2 >= this->length() || index1 < 0 || index2 < 0 || this->head == NULL) {
+    #####:  606:        return;
+        -:  607:    } else {
+        4:  608:        Node<T>* current = this->head;
+        4:  609:        Node<T>* first = NULL;
+        4:  610:        Node<T>* second = NULL;
+        -:  611:
+        4:  612:        int count = 0;
+       20:  613:        while (current->next != this->head) {
+       16:  614:            if (count == index1) first = current;
+      16*:  615:            if (count == index2) second = current;
+       16:  616:            current = current->next;
+       16:  617:            count++;
+        -:  618:        }
+        -:  619:
+       4*:  620:        if (count == index1) first = current;
+        4:  621:        if (count == index2) second = current;
+        -:  622:
+        4:  623:        T temp = first->data;
+        4:  624:        first->data = second->data;
+        4:  625:        second->data = temp;
+        -:  626:    }
+        -:  627:}
+------------------
+_ZN11CLinkedListIsE4swapEii:
+        1:  604:void CLinkedList<T>::swap(int index1, int index2) {
+       1*:  605:    if (index1 >= this->length() || index2 >= this->length() || index1 < 0 || index2 < 0 || this->head == NULL) {
+    #####:  606:        return;
+        -:  607:    } else {
+        1:  608:        Node<T>* current = this->head;
+        1:  609:        Node<T>* first = NULL;
+        1:  610:        Node<T>* second = NULL;
+        -:  611:
+        1:  612:        int count = 0;
+        5:  613:        while (current->next != this->head) {
+        4:  614:            if (count == index1) first = current;
+       4*:  615:            if (count == index2) second = current;
+        4:  616:            current = current->next;
+        4:  617:            count++;
+        -:  618:        }
+        -:  619:
+       1*:  620:        if (count == index1) first = current;
+        1:  621:        if (count == index2) second = current;
+        -:  622:
+        1:  623:        T temp = first->data;
+        1:  624:        first->data = second->data;
+        1:  625:        second->data = temp;
+        -:  626:    }
+        -:  627:}
+------------------
+_ZN11CLinkedListIdE4swapEii:
+        1:  604:void CLinkedList<T>::swap(int index1, int index2) {
+       1*:  605:    if (index1 >= this->length() || index2 >= this->length() || index1 < 0 || index2 < 0 || this->head == NULL) {
+    #####:  606:        return;
+        -:  607:    } else {
+        1:  608:        Node<T>* current = this->head;
+        1:  609:        Node<T>* first = NULL;
+        1:  610:        Node<T>* second = NULL;
+        -:  611:
+        1:  612:        int count = 0;
+        5:  613:        while (current->next != this->head) {
+        4:  614:            if (count == index1) first = current;
+       4*:  615:            if (count == index2) second = current;
+        4:  616:            current = current->next;
+        4:  617:            count++;
+        -:  618:        }
+        -:  619:
+       1*:  620:        if (count == index1) first = current;
+        1:  621:        if (count == index2) second = current;
+        -:  622:
+        1:  623:        T temp = first->data;
+        1:  624:        first->data = second->data;
+        1:  625:        second->data = temp;
+        -:  626:    }
+        -:  627:}
+------------------
+_ZN11CLinkedListIfE4swapEii:
+        1:  604:void CLinkedList<T>::swap(int index1, int index2) {
+       1*:  605:    if (index1 >= this->length() || index2 >= this->length() || index1 < 0 || index2 < 0 || this->head == NULL) {
+    #####:  606:        return;
+        -:  607:    } else {
+        1:  608:        Node<T>* current = this->head;
+        1:  609:        Node<T>* first = NULL;
+        1:  610:        Node<T>* second = NULL;
+        -:  611:
+        1:  612:        int count = 0;
+        5:  613:        while (current->next != this->head) {
+        4:  614:            if (count == index1) first = current;
+       4*:  615:            if (count == index2) second = current;
+        4:  616:            current = current->next;
+        4:  617:            count++;
+        -:  618:        }
+        -:  619:
+       1*:  620:        if (count == index1) first = current;
+        1:  621:        if (count == index2) second = current;
+        -:  622:
+        1:  623:        T temp = first->data;
+        1:  624:        first->data = second->data;
+        1:  625:        second->data = temp;
+        -:  626:    }
+        -:  627:}
+------------------
+_ZN11CLinkedListIiE4swapEii:
+        1:  604:void CLinkedList<T>::swap(int index1, int index2) {
+       1*:  605:    if (index1 >= this->length() || index2 >= this->length() || index1 < 0 || index2 < 0 || this->head == NULL) {
+    #####:  606:        return;
+        -:  607:    } else {
+        1:  608:        Node<T>* current = this->head;
+        1:  609:        Node<T>* first = NULL;
+        1:  610:        Node<T>* second = NULL;
+        -:  611:
+        1:  612:        int count = 0;
+        5:  613:        while (current->next != this->head) {
+        4:  614:            if (count == index1) first = current;
+       4*:  615:            if (count == index2) second = current;
+        4:  616:            current = current->next;
+        4:  617:            count++;
+        -:  618:        }
+        -:  619:
+       1*:  620:        if (count == index1) first = current;
+        1:  621:        if (count == index2) second = current;
+        -:  622:
+        1:  623:        T temp = first->data;
+        1:  624:        first->data = second->data;
+        1:  625:        second->data = temp;
+        -:  626:    }
+        -:  627:}
+------------------
+        -:  628:
+        -:  629:
+        -:  630:/*template<class T>
+        -:  631:void CLinkedList<T>::swap(int index1,int index2)
+        -:  632:{
+        -:  633:    if(index1 < 0 || index2<0 || index1>=this->length() || index2>=this->length() || this->head==NULL)
+        -:  634:    {
+        -:  635:        return;
+        -:  636:    }
+        -:  637:
+        -:  638:    Node<T>* node1=this->head;
+        -:  639:    Node<T>* node2=this->head;
+        -:  640:
+        -:  641:    for(int x=0;x<index1;x++)
+        -:  642:    {
+        -:  643:        node1=node1->next;
+        -:  644:    }
+        -:  645:
+        -:  646:    for(int x=0;x<index2;x++)
+        -:  647:    {
+        -:  648:        node2=node2->next;
+        -:  649:    }
+        -:  650:
+        -:  651:    std::swap(node1->data,node2->data);
+        -:  652:
+        -:  653:}*/
+        -:  654:
+        -:  655:template <class T> 
+        4:  656:void CLinkedList<T>::slice(int start, int end) {
+       4*:  657:    if (!(start >= this->length() || end >= this->length() || start > end || start < 0 || end < 0)) {
+       1*:  658:         Node<T>* current = this->head;
+       1*:  659:        int count = 0;
+       4*:  660:        for(int i = start; i <= end; i++) {
+       3*:  661:            this->append((*this)[i]);
+       3*:  662:            count++;
+        -:  663:        }
+        -:  664:
+       1*:  665:        int len = this->length() - count, j = 0;
+      15*:  666:        while (j < len) {
+      14*:  667:            this->remove(0);
+      14*:  668:            j++;
+        -:  669:        }
+        -:  670:    } 
+        4:  671:}
+------------------
+_ZN11CLinkedListIiE5sliceEii:
+        1:  656:void CLinkedList<T>::slice(int start, int end) {
+       1*:  657:    if (!(start >= this->length() || end >= this->length() || start > end || start < 0 || end < 0)) {
+    #####:  658:         Node<T>* current = this->head;
+    #####:  659:        int count = 0;
+    #####:  660:        for(int i = start; i <= end; i++) {
+    #####:  661:            this->append((*this)[i]);
+    #####:  662:            count++;
+        -:  663:        }
+        -:  664:
+    #####:  665:        int len = this->length() - count, j = 0;
+    #####:  666:        while (j < len) {
+    #####:  667:            this->remove(0);
+    #####:  668:            j++;
+        -:  669:        }
+        -:  670:    } 
+        1:  671:}
+------------------
+_ZN11CLinkedListIsE5sliceEii:
+        1:  656:void CLinkedList<T>::slice(int start, int end) {
+       1*:  657:    if (!(start >= this->length() || end >= this->length() || start > end || start < 0 || end < 0)) {
+    #####:  658:         Node<T>* current = this->head;
+    #####:  659:        int count = 0;
+    #####:  660:        for(int i = start; i <= end; i++) {
+    #####:  661:            this->append((*this)[i]);
+    #####:  662:            count++;
+        -:  663:        }
+        -:  664:
+    #####:  665:        int len = this->length() - count, j = 0;
+    #####:  666:        while (j < len) {
+    #####:  667:            this->remove(0);
+    #####:  668:            j++;
+        -:  669:        }
+        -:  670:    } 
+        1:  671:}
+------------------
+_ZN11CLinkedListIfE5sliceEii:
+        1:  656:void CLinkedList<T>::slice(int start, int end) {
+       1*:  657:    if (!(start >= this->length() || end >= this->length() || start > end || start < 0 || end < 0)) {
+    #####:  658:         Node<T>* current = this->head;
+    #####:  659:        int count = 0;
+    #####:  660:        for(int i = start; i <= end; i++) {
+    #####:  661:            this->append((*this)[i]);
+    #####:  662:            count++;
+        -:  663:        }
+        -:  664:
+    #####:  665:        int len = this->length() - count, j = 0;
+    #####:  666:        while (j < len) {
+    #####:  667:            this->remove(0);
+    #####:  668:            j++;
+        -:  669:        }
+        -:  670:    } 
+        1:  671:}
+------------------
+_ZN11CLinkedListIdE5sliceEii:
+        1:  656:void CLinkedList<T>::slice(int start, int end) {
+       1*:  657:    if (!(start >= this->length() || end >= this->length() || start > end || start < 0 || end < 0)) {
+        1:  658:         Node<T>* current = this->head;
+        1:  659:        int count = 0;
+        4:  660:        for(int i = start; i <= end; i++) {
+        3:  661:            this->append((*this)[i]);
+        3:  662:            count++;
+        -:  663:        }
+        -:  664:
+        1:  665:        int len = this->length() - count, j = 0;
+       15:  666:        while (j < len) {
+       14:  667:            this->remove(0);
+       14:  668:            j++;
+        -:  669:        }
+        -:  670:    } 
+        1:  671:}
+------------------
+        -:  672:
+        -:  673:/*template<class T>
+        -:  674:void CLinkedList<T>::slice(int start, int end)
+        -:  675:{
+        -:  676:    if(start<0 || end<start || start>=length() || head==NULL)
+        -:  677:    {
+        -:  678:        return;
+        -:  679:    }
+        -:  680:
+        -:  681:    int length_i=length();
+        -:  682:
+        -:  683:    if(end>=length_i)
+        -:  684:    {
+        -:  685:        end=length_i-1;
+        -:  686:    }
+        -:  687:
+        -:  688:    Node<T>* curr=head;
+        -:  689:    Node<T>* prev=NULL;
+        -:  690:
+        -:  691:    int idx=0;
+        -:  692:
+        -:  693:    while(idx<start)
+        -:  694:    {
+        -:  695:        //fond node with ending idx
+        -:  696:        prev=curr;
+        -:  697:        curr=curr->next;
+        -:  698:        idx++;
+        -:  699:    }
+        -:  700:
+        -:  701:    Node<T>* nhead=curr;
+        -:  702:    Node<T>* ntail=curr;
+        -:  703:
+        -:  704:    while(idx<end)
+        -:  705:    {
+        -:  706:        prev=curr;
+        -:  707:        curr=curr->next;
+        -:  708:        idx++;
+        -:  709:    }
+        -:  710:
+        -:  711:    if(prev)
+        -:  712:    {
+        -:  713:        prev->next=curr->next;
+        -:  714:    }
+        -:  715:
+        -:  716:    ntail->next=nhead;
+        -:  717:    head=nhead;
+        -:  718:}*/
+        -:  719:
+        -:  720:/*template<class T>
+        -:  721:void CLinkedList<T>::RRotate(int k)
+        -:  722:{
+        -:  723:    if(k==0 || k<0 || this->head==NULL)
+        -:  724:    {
+        -:  725:        return;
+        -:  726:    }
+        -:  727:
+        -:  728:    int size=this->length();
+        -:  729:
+        -:  730:    // if(k==0)
+        -:  731:    // {
+        -:  732:    //     return;
+        -:  733:    // }
+        -:  734:    int move=k%size;
+        -:  735:   
+        -:  736:
+        -:  737:    Node<T>* curr=this->head;
+        -:  738:
+        -:  739:    for(int x=0;x<move;x++)
+        -:  740:    {
+        -:  741:        curr=curr->next;
+        -:  742:    }
+        -:  743:
+        -:  744:   // Node<T>* newhead=curr->next;
+        -:  745:
+        -:  746:    //curr->next=this->head;
+        -:  747:    this->head=curr;
+        -:  748:}*/
+        -:  749:
+        -:  750:/*template<class T>
+        -:  751:void CLinkedList<T>::LRotate(int k)
+        -:  752:{
+        -:  753:    if(k==0 || k<0 || this->head==NULL)
+        -:  754:    {
+        -:  755:        return;
+        -:  756:    }
+        -:  757:
+        -:  758:    int size=this->length();
+        -:  759:    int move=k%size;
+        -:  760:
+        -:  761:    
+        -:  762:
+        -:  763:    Node<T>* curr=this->head;
+        -:  764:
+        -:  765:    for(int x=0;x<size-move;x++)
+        -:  766:    {
+        -:  767:        curr=curr->next;
+        -:  768:    }
+        -:  769:
+        -:  770:   // Node<T>* newhead=curr->next;
+        -:  771:
+        -:  772:    //curr->next=this->head;
+        -:  773:    this->head=curr;
+        -:  774:}*/
+        -:  775:
+        -:  776:template <class T>
+        8:  777:void CLinkedList<T>::RRotate(int k) {
+        8:  778:    if (!(this->head == NULL || k < 0)) {
+        8:  779:        int i = 0;
+       24:  780:        while (i < k) {
+       16:  781:            int index = this->length() - (i + 1);
+       16:  782:            T data = this->get(index);
+       16:  783:            this->prepend(data);
+       16:  784:            i++;
+        -:  785:        }
+        -:  786:
+        8:  787:        i = 0;
+       24:  788:        while (i < k) {
+       16:  789:            int index = this->length() - 1;
+       16:  790:            this->remove(index);
+       16:  791:            i++;
+        -:  792:        }
+        -:  793:    }
+        8:  794:}
+------------------
+_ZN11CLinkedListIiE7RRotateEi:
+        2:  777:void CLinkedList<T>::RRotate(int k) {
+        2:  778:    if (!(this->head == NULL || k < 0)) {
+        2:  779:        int i = 0;
+        6:  780:        while (i < k) {
+        4:  781:            int index = this->length() - (i + 1);
+        4:  782:            T data = this->get(index);
+        4:  783:            this->prepend(data);
+        4:  784:            i++;
+        -:  785:        }
+        -:  786:
+        2:  787:        i = 0;
+        6:  788:        while (i < k) {
+        4:  789:            int index = this->length() - 1;
+        4:  790:            this->remove(index);
+        4:  791:            i++;
+        -:  792:        }
+        -:  793:    }
+        2:  794:}
+------------------
+_ZN11CLinkedListIsE7RRotateEi:
+        2:  777:void CLinkedList<T>::RRotate(int k) {
+        2:  778:    if (!(this->head == NULL || k < 0)) {
+        2:  779:        int i = 0;
+        6:  780:        while (i < k) {
+        4:  781:            int index = this->length() - (i + 1);
+        4:  782:            T data = this->get(index);
+        4:  783:            this->prepend(data);
+        4:  784:            i++;
+        -:  785:        }
+        -:  786:
+        2:  787:        i = 0;
+        6:  788:        while (i < k) {
+        4:  789:            int index = this->length() - 1;
+        4:  790:            this->remove(index);
+        4:  791:            i++;
+        -:  792:        }
+        -:  793:    }
+        2:  794:}
+------------------
+_ZN11CLinkedListIfE7RRotateEi:
+        2:  777:void CLinkedList<T>::RRotate(int k) {
+        2:  778:    if (!(this->head == NULL || k < 0)) {
+        2:  779:        int i = 0;
+        6:  780:        while (i < k) {
+        4:  781:            int index = this->length() - (i + 1);
+        4:  782:            T data = this->get(index);
+        4:  783:            this->prepend(data);
+        4:  784:            i++;
+        -:  785:        }
+        -:  786:
+        2:  787:        i = 0;
+        6:  788:        while (i < k) {
+        4:  789:            int index = this->length() - 1;
+        4:  790:            this->remove(index);
+        4:  791:            i++;
+        -:  792:        }
+        -:  793:    }
+        2:  794:}
+------------------
+_ZN11CLinkedListIdE7RRotateEi:
+        2:  777:void CLinkedList<T>::RRotate(int k) {
+        2:  778:    if (!(this->head == NULL || k < 0)) {
+        2:  779:        int i = 0;
+        6:  780:        while (i < k) {
+        4:  781:            int index = this->length() - (i + 1);
+        4:  782:            T data = this->get(index);
+        4:  783:            this->prepend(data);
+        4:  784:            i++;
+        -:  785:        }
+        -:  786:
+        2:  787:        i = 0;
+        6:  788:        while (i < k) {
+        4:  789:            int index = this->length() - 1;
+        4:  790:            this->remove(index);
+        4:  791:            i++;
+        -:  792:        }
+        -:  793:    }
+        2:  794:}
+------------------
+        -:  795:
+        -:  796:template <class T>
+        4:  797:void CLinkedList<T>::LRotate(int k) {
+        4:  798:    if (!(this->head == NULL || k < 0)) {
+        4:  799:        int i = 0;
+       32:  800:        while (i < k) {
+       28:  801:            T data = this->get(i);
+       28:  802:            this->append(data);
+       28:  803:            i++;
+        -:  804:        }
+        -:  805:
+        4:  806:        i = 0;
+       32:  807:        while (i < k) {
+       28:  808:            this->remove(0);
+       28:  809:            i++;
+        -:  810:        }
+        -:  811:    }
+        4:  812:}
+------------------
+_ZN11CLinkedListIiE7LRotateEi:
+        1:  797:void CLinkedList<T>::LRotate(int k) {
+        1:  798:    if (!(this->head == NULL || k < 0)) {
+        1:  799:        int i = 0;
+        8:  800:        while (i < k) {
+        7:  801:            T data = this->get(i);
+        7:  802:            this->append(data);
+        7:  803:            i++;
+        -:  804:        }
+        -:  805:
+        1:  806:        i = 0;
+        8:  807:        while (i < k) {
+        7:  808:            this->remove(0);
+        7:  809:            i++;
+        -:  810:        }
+        -:  811:    }
+        1:  812:}
+------------------
+_ZN11CLinkedListIsE7LRotateEi:
+        1:  797:void CLinkedList<T>::LRotate(int k) {
+        1:  798:    if (!(this->head == NULL || k < 0)) {
+        1:  799:        int i = 0;
+        8:  800:        while (i < k) {
+        7:  801:            T data = this->get(i);
+        7:  802:            this->append(data);
+        7:  803:            i++;
+        -:  804:        }
+        -:  805:
+        1:  806:        i = 0;
+        8:  807:        while (i < k) {
+        7:  808:            this->remove(0);
+        7:  809:            i++;
+        -:  810:        }
+        -:  811:    }
+        1:  812:}
+------------------
+_ZN11CLinkedListIfE7LRotateEi:
+        1:  797:void CLinkedList<T>::LRotate(int k) {
+        1:  798:    if (!(this->head == NULL || k < 0)) {
+        1:  799:        int i = 0;
+        8:  800:        while (i < k) {
+        7:  801:            T data = this->get(i);
+        7:  802:            this->append(data);
+        7:  803:            i++;
+        -:  804:        }
+        -:  805:
+        1:  806:        i = 0;
+        8:  807:        while (i < k) {
+        7:  808:            this->remove(0);
+        7:  809:            i++;
+        -:  810:        }
+        -:  811:    }
+        1:  812:}
+------------------
+_ZN11CLinkedListIdE7LRotateEi:
+        1:  797:void CLinkedList<T>::LRotate(int k) {
+        1:  798:    if (!(this->head == NULL || k < 0)) {
+        1:  799:        int i = 0;
+        8:  800:        while (i < k) {
+        7:  801:            T data = this->get(i);
+        7:  802:            this->append(data);
+        7:  803:            i++;
+        -:  804:        }
+        -:  805:
+        1:  806:        i = 0;
+        8:  807:        while (i < k) {
+        7:  808:            this->remove(0);
+        7:  809:            i++;
+        -:  810:        }
+        -:  811:    }
+        1:  812:}
+------------------
+        -:  813:
+        -:  814:template<class T>
+        4:  815:CLinkedList<T>& CLinkedList<T>::operator=(const CLinkedList& other)
+        -:  816:{
+        4:  817:    if(this == &other)
+        -:  818:    {
+    #####:  819:        return *this;
+        -:  820:    }
+        -:  821:
+        4:  822:    clear();
+        -:  823:
+        4:  824:    if(other.head == NULL)
+        -:  825:    {
+    #####:  826:        return*this;
+        -:  827:    }
+        -:  828:
+        4:  829:    Node<T>* curr=other.head;
+        -:  830:
+        -:  831:    do
+        -:  832:    {
+       20:  833:        append(curr->data);
+       20:  834:        curr=curr->next;
+       20:  835:    } while (curr != other.head);
+        -:  836:    
+        4:  837:    return *this;
+        -:  838:}
+------------------
+_ZN11CLinkedListIiEaSERKS0_:
+        1:  815:CLinkedList<T>& CLinkedList<T>::operator=(const CLinkedList& other)
+        -:  816:{
+        1:  817:    if(this == &other)
+        -:  818:    {
+    #####:  819:        return *this;
+        -:  820:    }
+        -:  821:
+        1:  822:    clear();
+        -:  823:
+        1:  824:    if(other.head == NULL)
+        -:  825:    {
+    #####:  826:        return*this;
+        -:  827:    }
+        -:  828:
+        1:  829:    Node<T>* curr=other.head;
+        -:  830:
+        -:  831:    do
+        -:  832:    {
+        5:  833:        append(curr->data);
+        5:  834:        curr=curr->next;
+        5:  835:    } while (curr != other.head);
+        -:  836:    
+        1:  837:    return *this;
+        -:  838:}
+------------------
+_ZN11CLinkedListIsEaSERKS0_:
+        1:  815:CLinkedList<T>& CLinkedList<T>::operator=(const CLinkedList& other)
+        -:  816:{
+        1:  817:    if(this == &other)
+        -:  818:    {
+    #####:  819:        return *this;
+        -:  820:    }
+        -:  821:
+        1:  822:    clear();
+        -:  823:
+        1:  824:    if(other.head == NULL)
+        -:  825:    {
+    #####:  826:        return*this;
+        -:  827:    }
+        -:  828:
+        1:  829:    Node<T>* curr=other.head;
+        -:  830:
+        -:  831:    do
+        -:  832:    {
+        5:  833:        append(curr->data);
+        5:  834:        curr=curr->next;
+        5:  835:    } while (curr != other.head);
+        -:  836:    
+        1:  837:    return *this;
+        -:  838:}
+------------------
+_ZN11CLinkedListIfEaSERKS0_:
+        1:  815:CLinkedList<T>& CLinkedList<T>::operator=(const CLinkedList& other)
+        -:  816:{
+        1:  817:    if(this == &other)
+        -:  818:    {
+    #####:  819:        return *this;
+        -:  820:    }
+        -:  821:
+        1:  822:    clear();
+        -:  823:
+        1:  824:    if(other.head == NULL)
+        -:  825:    {
+    #####:  826:        return*this;
+        -:  827:    }
+        -:  828:
+        1:  829:    Node<T>* curr=other.head;
+        -:  830:
+        -:  831:    do
+        -:  832:    {
+        5:  833:        append(curr->data);
+        5:  834:        curr=curr->next;
+        5:  835:    } while (curr != other.head);
+        -:  836:    
+        1:  837:    return *this;
+        -:  838:}
+------------------
+_ZN11CLinkedListIdEaSERKS0_:
+        1:  815:CLinkedList<T>& CLinkedList<T>::operator=(const CLinkedList& other)
+        -:  816:{
+        1:  817:    if(this == &other)
+        -:  818:    {
+    #####:  819:        return *this;
+        -:  820:    }
+        -:  821:
+        1:  822:    clear();
+        -:  823:
+        1:  824:    if(other.head == NULL)
+        -:  825:    {
+    #####:  826:        return*this;
+        -:  827:    }
+        -:  828:
+        1:  829:    Node<T>* curr=other.head;
+        -:  830:
+        -:  831:    do
+        -:  832:    {
+        5:  833:        append(curr->data);
+        5:  834:        curr=curr->next;
+        5:  835:    } while (curr != other.head);
+        -:  836:    
+        1:  837:    return *this;
+        -:  838:}
+------------------
+        -:  839://get here//
+        -:  840:template <class T>
+        4:  841:bool CLinkedList<T>::operator==(const CLinkedList<T> &other) const {
+       4*:  842:    if (this->length() != other.length() || (this->head == NULL && other.head != NULL)) {
+       1*:  843:        return false;
+        -:  844:    }
+        -:  845:
+       3*:  846:    bool result = false;
+        -:  847:    
+       3*:  848:    if(this->length() == other.length()) {
+       3*:  849:        int thisCount = 0;
+       3*:  850:        int otherCount = 0;
+        -:  851:
+       3*:  852:        int p = 0;
+       9*:  853:        while (p < this->length()) {
+       6*:  854:            int thisValue = this->get(p);
+       6*:  855:            int otherValue = other.get(p);
+        -:  856:
+       6*:  857:            int i = 0;
+      18*:  858:            while (i < this->length()) {
+      12*:  859:                if ((*this)[i] == otherValue) {
+       6*:  860:                    thisCount++;
+        -:  861:                }
+      12*:  862:                i++;
+        -:  863:            }
+        -:  864:
+       6*:  865:            int j = 0;
+      18*:  866:            while (j < other.length()) {
+      12*:  867:                if (other[j] == thisValue) {
+       6*:  868:                    otherCount++;
+        -:  869:                }
+      12*:  870:                j++;
+        -:  871:            }
+       6*:  872:            p++;
+        -:  873:        }
+        -:  874:
+       3*:  875:        if(thisCount == otherCount) {
+       3*:  876:            if (this->length() == thisCount) {
+       3*:  877:                result = true;
+       3*:  878:                return result;
+        -:  879:            }
+    #####:  880:            result = false;
+    #####:  881:            return result;
+        -:  882:        } else {
+    #####:  883:            result = false;
+    #####:  884:            return result;
+        -:  885:        }
+        -:  886:    }
+        -:  887:    
+    #####:  888:    return result;
+        -:  889:}
+------------------
+_ZNK11CLinkedListIiEeqERKS0_:
+        1:  841:bool CLinkedList<T>::operator==(const CLinkedList<T> &other) const {
+       1*:  842:    if (this->length() != other.length() || (this->head == NULL && other.head != NULL)) {
+    #####:  843:        return false;
+        -:  844:    }
+        -:  845:
+        1:  846:    bool result = false;
+        -:  847:    
+        1:  848:    if(this->length() == other.length()) {
+        1:  849:        int thisCount = 0;
+        1:  850:        int otherCount = 0;
+        -:  851:
+        1:  852:        int p = 0;
+        3:  853:        while (p < this->length()) {
+        2:  854:            int thisValue = this->get(p);
+        2:  855:            int otherValue = other.get(p);
+        -:  856:
+        2:  857:            int i = 0;
+        6:  858:            while (i < this->length()) {
+        4:  859:                if ((*this)[i] == otherValue) {
+        2:  860:                    thisCount++;
+        -:  861:                }
+        4:  862:                i++;
+        -:  863:            }
+        -:  864:
+        2:  865:            int j = 0;
+        6:  866:            while (j < other.length()) {
+        4:  867:                if (other[j] == thisValue) {
+        2:  868:                    otherCount++;
+        -:  869:                }
+        4:  870:                j++;
+        -:  871:            }
+        2:  872:            p++;
+        -:  873:        }
+        -:  874:
+        1:  875:        if(thisCount == otherCount) {
+        1:  876:            if (this->length() == thisCount) {
+        1:  877:                result = true;
+        1:  878:                return result;
+        -:  879:            }
+    #####:  880:            result = false;
+    #####:  881:            return result;
+        -:  882:        } else {
+    #####:  883:            result = false;
+    #####:  884:            return result;
+        -:  885:        }
+        -:  886:    }
+        -:  887:    
+    #####:  888:    return result;
+        -:  889:}
+------------------
+_ZNK11CLinkedListIsEeqERKS0_:
+        1:  841:bool CLinkedList<T>::operator==(const CLinkedList<T> &other) const {
+       1*:  842:    if (this->length() != other.length() || (this->head == NULL && other.head != NULL)) {
+    #####:  843:        return false;
+        -:  844:    }
+        -:  845:
+        1:  846:    bool result = false;
+        -:  847:    
+        1:  848:    if(this->length() == other.length()) {
+        1:  849:        int thisCount = 0;
+        1:  850:        int otherCount = 0;
+        -:  851:
+        1:  852:        int p = 0;
+        3:  853:        while (p < this->length()) {
+        2:  854:            int thisValue = this->get(p);
+        2:  855:            int otherValue = other.get(p);
+        -:  856:
+        2:  857:            int i = 0;
+        6:  858:            while (i < this->length()) {
+        4:  859:                if ((*this)[i] == otherValue) {
+        2:  860:                    thisCount++;
+        -:  861:                }
+        4:  862:                i++;
+        -:  863:            }
+        -:  864:
+        2:  865:            int j = 0;
+        6:  866:            while (j < other.length()) {
+        4:  867:                if (other[j] == thisValue) {
+        2:  868:                    otherCount++;
+        -:  869:                }
+        4:  870:                j++;
+        -:  871:            }
+        2:  872:            p++;
+        -:  873:        }
+        -:  874:
+        1:  875:        if(thisCount == otherCount) {
+        1:  876:            if (this->length() == thisCount) {
+        1:  877:                result = true;
+        1:  878:                return result;
+        -:  879:            }
+    #####:  880:            result = false;
+    #####:  881:            return result;
+        -:  882:        } else {
+    #####:  883:            result = false;
+    #####:  884:            return result;
+        -:  885:        }
+        -:  886:    }
+        -:  887:    
+    #####:  888:    return result;
+        -:  889:}
+------------------
+_ZNK11CLinkedListIfEeqERKS0_:
+        1:  841:bool CLinkedList<T>::operator==(const CLinkedList<T> &other) const {
+       1*:  842:    if (this->length() != other.length() || (this->head == NULL && other.head != NULL)) {
+    #####:  843:        return false;
+        -:  844:    }
+        -:  845:
+        1:  846:    bool result = false;
+        -:  847:    
+        1:  848:    if(this->length() == other.length()) {
+        1:  849:        int thisCount = 0;
+        1:  850:        int otherCount = 0;
+        -:  851:
+        1:  852:        int p = 0;
+        3:  853:        while (p < this->length()) {
+        2:  854:            int thisValue = this->get(p);
+        2:  855:            int otherValue = other.get(p);
+        -:  856:
+        2:  857:            int i = 0;
+        6:  858:            while (i < this->length()) {
+        4:  859:                if ((*this)[i] == otherValue) {
+        2:  860:                    thisCount++;
+        -:  861:                }
+        4:  862:                i++;
+        -:  863:            }
+        -:  864:
+        2:  865:            int j = 0;
+        6:  866:            while (j < other.length()) {
+        4:  867:                if (other[j] == thisValue) {
+        2:  868:                    otherCount++;
+        -:  869:                }
+        4:  870:                j++;
+        -:  871:            }
+        2:  872:            p++;
+        -:  873:        }
+        -:  874:
+        1:  875:        if(thisCount == otherCount) {
+        1:  876:            if (this->length() == thisCount) {
+        1:  877:                result = true;
+        1:  878:                return result;
+        -:  879:            }
+    #####:  880:            result = false;
+    #####:  881:            return result;
+        -:  882:        } else {
+    #####:  883:            result = false;
+    #####:  884:            return result;
+        -:  885:        }
+        -:  886:    }
+        -:  887:    
+    #####:  888:    return result;
+        -:  889:}
+------------------
+_ZNK11CLinkedListIdEeqERKS0_:
+        1:  841:bool CLinkedList<T>::operator==(const CLinkedList<T> &other) const {
+       1*:  842:    if (this->length() != other.length() || (this->head == NULL && other.head != NULL)) {
+        1:  843:        return false;
+        -:  844:    }
+        -:  845:
+    #####:  846:    bool result = false;
+        -:  847:    
+    #####:  848:    if(this->length() == other.length()) {
+    #####:  849:        int thisCount = 0;
+    #####:  850:        int otherCount = 0;
+        -:  851:
+    #####:  852:        int p = 0;
+    #####:  853:        while (p < this->length()) {
+    #####:  854:            int thisValue = this->get(p);
+    #####:  855:            int otherValue = other.get(p);
+        -:  856:
+    #####:  857:            int i = 0;
+    #####:  858:            while (i < this->length()) {
+    #####:  859:                if ((*this)[i] == otherValue) {
+    #####:  860:                    thisCount++;
+        -:  861:                }
+    #####:  862:                i++;
+        -:  863:            }
+        -:  864:
+    #####:  865:            int j = 0;
+    #####:  866:            while (j < other.length()) {
+    #####:  867:                if (other[j] == thisValue) {
+    #####:  868:                    otherCount++;
+        -:  869:                }
+    #####:  870:                j++;
+        -:  871:            }
+    #####:  872:            p++;
+        -:  873:        }
+        -:  874:
+    #####:  875:        if(thisCount == otherCount) {
+    #####:  876:            if (this->length() == thisCount) {
+    #####:  877:                result = true;
+    #####:  878:                return result;
+        -:  879:            }
+    #####:  880:            result = false;
+    #####:  881:            return result;
+        -:  882:        } else {
+    #####:  883:            result = false;
+    #####:  884:            return result;
+        -:  885:        }
+        -:  886:    }
+        -:  887:    
+    #####:  888:    return result;
+        -:  889:}
+------------------
+        -:  890:
+        -:  891:template <class T>
+        4:  892:void CLinkedList<T>::operator+=(const CLinkedList &other)
+        -:  893:{
+        4:  894:    if (this == &other || other.head == NULL)
+        -:  895:    {
+    #####:  896:        return;
+        -:  897:    }
+        -:  898:
+        4:  899:    int index = 0;
+       14:  900:    while (index < other.length())
+        -:  901:    {
+       10:  902:        this->append(other[index]);
+       10:  903:        index++;
+        -:  904:    }
+        -:  905:}
+------------------
+_ZN11CLinkedListIiEpLERKS0_:
+        1:  892:void CLinkedList<T>::operator+=(const CLinkedList &other)
+        -:  893:{
+        1:  894:    if (this == &other || other.head == NULL)
+        -:  895:    {
+    #####:  896:        return;
+        -:  897:    }
+        -:  898:
+        1:  899:    int index = 0;
+        3:  900:    while (index < other.length())
+        -:  901:    {
+        2:  902:        this->append(other[index]);
+        2:  903:        index++;
+        -:  904:    }
+        -:  905:}
+------------------
+_ZN11CLinkedListIsEpLERKS0_:
+        1:  892:void CLinkedList<T>::operator+=(const CLinkedList &other)
+        -:  893:{
+        1:  894:    if (this == &other || other.head == NULL)
+        -:  895:    {
+    #####:  896:        return;
+        -:  897:    }
+        -:  898:
+        1:  899:    int index = 0;
+        3:  900:    while (index < other.length())
+        -:  901:    {
+        2:  902:        this->append(other[index]);
+        2:  903:        index++;
+        -:  904:    }
+        -:  905:}
+------------------
+_ZN11CLinkedListIfEpLERKS0_:
+        1:  892:void CLinkedList<T>::operator+=(const CLinkedList &other)
+        -:  893:{
+        1:  894:    if (this == &other || other.head == NULL)
+        -:  895:    {
+    #####:  896:        return;
+        -:  897:    }
+        -:  898:
+        1:  899:    int index = 0;
+        3:  900:    while (index < other.length())
+        -:  901:    {
+        2:  902:        this->append(other[index]);
+        2:  903:        index++;
+        -:  904:    }
+        -:  905:}
+------------------
+_ZN11CLinkedListIdEpLERKS0_:
+        1:  892:void CLinkedList<T>::operator+=(const CLinkedList &other)
+        -:  893:{
+        1:  894:    if (this == &other || other.head == NULL)
+        -:  895:    {
+    #####:  896:        return;
+        -:  897:    }
+        -:  898:
+        1:  899:    int index = 0;
+        5:  900:    while (index < other.length())
+        -:  901:    {
+        4:  902:        this->append(other[index]);
+        4:  903:        index++;
+        -:  904:    }
+        -:  905:}
+------------------
+        -:  906:/*template<class T>
+        -:  907:bool CLinkedList<T>::operator==(const CLinkedList& other)const
+        -:  908:{
+        -:  909:    if(this == &other)
+        -:  910:    {
+        -:  911:        return true;
+        -:  912:    }
+        -:  913:
+        -:  914:    if(this->length() != other.length())
+        -:  915:    {
+        -:  916:        return (this->length() != other.length());
+        -:  917:    }
+        -:  918:
+        -:  919:    if(!this->head || !other.head)
+        -:  920:    {
+        -:  921:        return !this->head && !other.head;
+        -:  922:    }
+        -:  923:
+        -:  924:
+        -:  925:
+        -:  926:    Node<T>* curr=this->head;
+        -:  927:    Node<T>* other_curr=other.head;
+        -:  928:
+        -:  929:    do
+        -:  930:    {
+        -:  931:        if(curr->data != other_curr->data)
+        -:  932:        {
+        -:  933:            return false;
+        -:  934:        }
+        -:  935:
+        -:  936:
+        -:  937:        curr=curr->next;
+        -:  938:        other_curr=other_curr->next;
+        -:  939:    } while (curr != head && other_curr!=other.head);
+        -:  940:    
+        -:  941:    return true;
+        -:  942:}
+        -:  943:
+        -:  944:template<class T>
+        -:  945:void CLinkedList<T>::operator+=(const CLinkedList& other)
+        -:  946:{
+        -:  947:    /*if(this == &other || other.head==NULL)
+        -:  948:    {
+        -:  949:        return;
+        -:  950:    }
+        -:  951:
+        -:  952:    if(head==NULL)
+        -:  953:    {
+        -:  954:        head=other.head;
+        -:  955:    }
+        -:  956:    else
+        -:  957:    {
+        -:  958:        Node<T>* last=head; //what if heads empty
+        -:  959:        //dont use head
+        -:  960:        //k=just call append
+        -:  961:
+        -:  962:        while(last->next != head)
+        -:  963:        {
+        -:  964:            last=last->next;
+        -:  965:        }
+        -:  966:        last->next=other.head;
+        -:  967:    }
+        -:  968:
+        -:  969:    Node<T>* temp = other.head;
+        -:  970:
+        -:  971:    while(temp->next != other.head)
+        -:  972:    {
+        -:  973:        temp=temp->next;
+        -:  974:    }
+        -:  975:    temp->next=head;*/
+        -:  976:   // other.head=NULL;
+        -:  977:
+        -:  978:template <class T>
+        4:  979:CLinkedList<T> *CLinkedList<T>::operator-(const CLinkedList<T> &other) const {
+        4:  980:    CLinkedList<T>* result = new CLinkedList<T>();
+        -:  981:    
+        4:  982:    int i = 0;
+       18:  983:    while (i < this->length()) {
+       14:  984:        result->append((*this)[i]);
+       14:  985:        i++;
+        -:  986:    }
+        -:  987:
+        4:  988:    int j = 0;
+       14:  989:    while (j < other.length()) {
+       10:  990:        result->removeElements(other[j]);
+       10:  991:        j++;
+        -:  992:    }
+        -:  993:
+        4:  994:    return result;
+        -:  995:}
+------------------
+_ZNK11CLinkedListIiEmiERKS0_:
+        1:  979:CLinkedList<T> *CLinkedList<T>::operator-(const CLinkedList<T> &other) const {
+        1:  980:    CLinkedList<T>* result = new CLinkedList<T>();
+        -:  981:    
+        1:  982:    int i = 0;
+        3:  983:    while (i < this->length()) {
+        2:  984:        result->append((*this)[i]);
+        2:  985:        i++;
+        -:  986:    }
+        -:  987:
+        1:  988:    int j = 0;
+        3:  989:    while (j < other.length()) {
+        2:  990:        result->removeElements(other[j]);
+        2:  991:        j++;
+        -:  992:    }
+        -:  993:
+        1:  994:    return result;
+        -:  995:}
+------------------
+_ZNK11CLinkedListIsEmiERKS0_:
+        1:  979:CLinkedList<T> *CLinkedList<T>::operator-(const CLinkedList<T> &other) const {
+        1:  980:    CLinkedList<T>* result = new CLinkedList<T>();
+        -:  981:    
+        1:  982:    int i = 0;
+        3:  983:    while (i < this->length()) {
+        2:  984:        result->append((*this)[i]);
+        2:  985:        i++;
+        -:  986:    }
+        -:  987:
+        1:  988:    int j = 0;
+        3:  989:    while (j < other.length()) {
+        2:  990:        result->removeElements(other[j]);
+        2:  991:        j++;
+        -:  992:    }
+        -:  993:
+        1:  994:    return result;
+        -:  995:}
+------------------
+_ZNK11CLinkedListIfEmiERKS0_:
+        1:  979:CLinkedList<T> *CLinkedList<T>::operator-(const CLinkedList<T> &other) const {
+        1:  980:    CLinkedList<T>* result = new CLinkedList<T>();
+        -:  981:    
+        1:  982:    int i = 0;
+        3:  983:    while (i < this->length()) {
+        2:  984:        result->append((*this)[i]);
+        2:  985:        i++;
+        -:  986:    }
+        -:  987:
+        1:  988:    int j = 0;
+        3:  989:    while (j < other.length()) {
+        2:  990:        result->removeElements(other[j]);
+        2:  991:        j++;
+        -:  992:    }
+        -:  993:
+        1:  994:    return result;
+        -:  995:}
+------------------
+_ZNK11CLinkedListIdEmiERKS0_:
+        1:  979:CLinkedList<T> *CLinkedList<T>::operator-(const CLinkedList<T> &other) const {
+        1:  980:    CLinkedList<T>* result = new CLinkedList<T>();
+        -:  981:    
+        1:  982:    int i = 0;
+        9:  983:    while (i < this->length()) {
+        8:  984:        result->append((*this)[i]);
+        8:  985:        i++;
+        -:  986:    }
+        -:  987:
+        1:  988:    int j = 0;
+        5:  989:    while (j < other.length()) {
+        4:  990:        result->removeElements(other[j]);
+        4:  991:        j++;
+        -:  992:    }
+        -:  993:
+        1:  994:    return result;
+        -:  995:}
+------------------
+        -:  996:
+        -:  997:
+        -:  998:
+        -:  999:
+        -: 1000:/*
+        -: 1001:template<class T>
+        -: 1002:CLinkedList<T>* CLinkedList<T>::operator-(const CLinkedList<T> &other) const
+        -: 1003:{
+        -: 1004:    CLinkedList<T>* out=new CLinkedList<T>();
+        -: 1005:
+        -: 1006:    if(this->head == NULL)
+        -: 1007:    {
+        -: 1008:        return out;
+        -: 1009:    }
+        -: 1010:    if(other.head == NULL)
+        -: 1011:    {
+        -: 1012:        //return *this; //cant return  this
+        -: 1013:
+        -: 1014:        out->operator=(*this);
+        -: 1015:        return out;
+        -: 1016:    }
+        -: 1017:
+        -: 1018:    Node<T>* curr=this->head;
+        -: 1019:
+        -: 1020:    do
+        -: 1021:    {
+        -: 1022:        Node<T>* curr2=other.head;
+        -: 1023:        bool done=false;
+        -: 1024:        do
+        -: 1025:        {
+        -: 1026:            if(curr->data == curr2->data)
+        -: 1027:            {
+        -: 1028:                done=true;
+        -: 1029:                break;
+        -: 1030:            }
+        -: 1031:            curr2=curr2->next;
+        -: 1032:        }while(curr2!=other.head);
+        -: 1033:
+        -: 1034:        if(!done)
+        -: 1035:        {
+        -: 1036:            out->append(curr->data);
+        -: 1037:        }
+        -: 1038:        curr=curr->next;
+        -: 1039:    } while (curr!=this->head);
+        -: 1040:
+        -: 1041:    return out;
+        -: 1042:    
+        -: 1043:}*/
+        -: 1044:
+        -: 1045:template <class T>
+        4: 1046:void CLinkedList<T>::removeDuplicates() {
+       4*: 1047:    if(this->length() == 0 || this->head == NULL) return;
+        -: 1048:
+        4: 1049:    const int maxSize = this->length();
+        4: 1050:    T tempList[maxSize];
+        4: 1051:    int len = 0;
+        -: 1052:
+        4: 1053:    int outer = 0;
+       26: 1054:    while (outer < maxSize) {
+       22: 1055:        T data = this->get(outer);
+       22: 1056:        bool containsData = false;
+        -: 1057:
+       22: 1058:        int inner = 0;
+       73: 1059:        while (inner < len) {
+       57: 1060:            if(tempList[inner] == data) {
+       6*: 1061:                containsData = true;
+       6*: 1062:                break;
+        -: 1063:            }
+       51: 1064:            inner++;
+        -: 1065:        }
+        -: 1066:
+       22: 1067:        if(containsData == false) {
+       16: 1068:            tempList[len] = data;
+       16: 1069:            len++;
+        -: 1070:        }
+        -: 1071:
+       22: 1072:        outer++;
+        -: 1073:    }
+        -: 1074:
+        4: 1075:    this->clear();
+        -: 1076:
+        4: 1077:    int count = 0;
+       20: 1078:    while (count < len) {
+       16: 1079:        this->append(tempList[count]);
+       16: 1080:        count++;
+        -: 1081:    }
+        4: 1082:}
+------------------
+_ZN11CLinkedListIiE16removeDuplicatesEv:
+        1: 1046:void CLinkedList<T>::removeDuplicates() {
+       1*: 1047:    if(this->length() == 0 || this->head == NULL) return;
+        -: 1048:
+        1: 1049:    const int maxSize = this->length();
+        1: 1050:    T tempList[maxSize];
+        1: 1051:    int len = 0;
+        -: 1052:
+        1: 1053:    int outer = 0;
+        5: 1054:    while (outer < maxSize) {
+        4: 1055:        T data = this->get(outer);
+        4: 1056:        bool containsData = false;
+        -: 1057:
+        4: 1058:        int inner = 0;
+        6: 1059:        while (inner < len) {
+        4: 1060:            if(tempList[inner] == data) {
+        2: 1061:                containsData = true;
+        2: 1062:                break;
+        -: 1063:            }
+        2: 1064:            inner++;
+        -: 1065:        }
+        -: 1066:
+        4: 1067:        if(containsData == false) {
+        2: 1068:            tempList[len] = data;
+        2: 1069:            len++;
+        -: 1070:        }
+        -: 1071:
+        4: 1072:        outer++;
+        -: 1073:    }
+        -: 1074:
+        1: 1075:    this->clear();
+        -: 1076:
+        1: 1077:    int count = 0;
+        3: 1078:    while (count < len) {
+        2: 1079:        this->append(tempList[count]);
+        2: 1080:        count++;
+        -: 1081:    }
+        1: 1082:}
+------------------
+_ZN11CLinkedListIsE16removeDuplicatesEv:
+        1: 1046:void CLinkedList<T>::removeDuplicates() {
+       1*: 1047:    if(this->length() == 0 || this->head == NULL) return;
+        -: 1048:
+        1: 1049:    const int maxSize = this->length();
+        1: 1050:    T tempList[maxSize];
+        1: 1051:    int len = 0;
+        -: 1052:
+        1: 1053:    int outer = 0;
+        5: 1054:    while (outer < maxSize) {
+        4: 1055:        T data = this->get(outer);
+        4: 1056:        bool containsData = false;
+        -: 1057:
+        4: 1058:        int inner = 0;
+        6: 1059:        while (inner < len) {
+        4: 1060:            if(tempList[inner] == data) {
+        2: 1061:                containsData = true;
+        2: 1062:                break;
+        -: 1063:            }
+        2: 1064:            inner++;
+        -: 1065:        }
+        -: 1066:
+        4: 1067:        if(containsData == false) {
+        2: 1068:            tempList[len] = data;
+        2: 1069:            len++;
+        -: 1070:        }
+        -: 1071:
+        4: 1072:        outer++;
+        -: 1073:    }
+        -: 1074:
+        1: 1075:    this->clear();
+        -: 1076:
+        1: 1077:    int count = 0;
+        3: 1078:    while (count < len) {
+        2: 1079:        this->append(tempList[count]);
+        2: 1080:        count++;
+        -: 1081:    }
+        1: 1082:}
+------------------
+_ZN11CLinkedListIfE16removeDuplicatesEv:
+        1: 1046:void CLinkedList<T>::removeDuplicates() {
+       1*: 1047:    if(this->length() == 0 || this->head == NULL) return;
+        -: 1048:
+        1: 1049:    const int maxSize = this->length();
+        1: 1050:    T tempList[maxSize];
+        1: 1051:    int len = 0;
+        -: 1052:
+        1: 1053:    int outer = 0;
+        5: 1054:    while (outer < maxSize) {
+        4: 1055:        T data = this->get(outer);
+        4: 1056:        bool containsData = false;
+        -: 1057:
+        4: 1058:        int inner = 0;
+        6: 1059:        while (inner < len) {
+        4: 1060:            if(tempList[inner] == data) {
+        2: 1061:                containsData = true;
+        2: 1062:                break;
+        -: 1063:            }
+        2: 1064:            inner++;
+        -: 1065:        }
+        -: 1066:
+        4: 1067:        if(containsData == false) {
+        2: 1068:            tempList[len] = data;
+        2: 1069:            len++;
+        -: 1070:        }
+        -: 1071:
+        4: 1072:        outer++;
+        -: 1073:    }
+        -: 1074:
+        1: 1075:    this->clear();
+        -: 1076:
+        1: 1077:    int count = 0;
+        3: 1078:    while (count < len) {
+        2: 1079:        this->append(tempList[count]);
+        2: 1080:        count++;
+        -: 1081:    }
+        1: 1082:}
+------------------
+_ZN11CLinkedListIdE16removeDuplicatesEv:
+        1: 1046:void CLinkedList<T>::removeDuplicates() {
+       1*: 1047:    if(this->length() == 0 || this->head == NULL) return;
+        -: 1048:
+        1: 1049:    const int maxSize = this->length();
+        1: 1050:    T tempList[maxSize];
+        1: 1051:    int len = 0;
+        -: 1052:
+        1: 1053:    int outer = 0;
+       11: 1054:    while (outer < maxSize) {
+       10: 1055:        T data = this->get(outer);
+       10: 1056:        bool containsData = false;
+        -: 1057:
+       10: 1058:        int inner = 0;
+       55: 1059:        while (inner < len) {
+       45: 1060:            if(tempList[inner] == data) {
+    #####: 1061:                containsData = true;
+    #####: 1062:                break;
+        -: 1063:            }
+       45: 1064:            inner++;
+        -: 1065:        }
+        -: 1066:
+       10: 1067:        if(containsData == false) {
+       10: 1068:            tempList[len] = data;
+       10: 1069:            len++;
+        -: 1070:        }
+        -: 1071:
+       10: 1072:        outer++;
+        -: 1073:    }
+        -: 1074:
+        1: 1075:    this->clear();
+        -: 1076:
+        1: 1077:    int count = 0;
+       11: 1078:    while (count < len) {
+       10: 1079:        this->append(tempList[count]);
+       10: 1080:        count++;
+        -: 1081:    }
+        1: 1082:}
+------------------
+        -: 1083:
+        -: 1084:
+        -: 1085:
+        -: 1086:/*template<class T>
+        -: 1087:void CLinkedList<T>::removeDuplicates()
+        -: 1088:{
+        -: 1089:    if(head == NULL)
+        -: 1090:    {
+        -: 1091:        return;
+        -: 1092:    }
+        -: 1093:
+        -: 1094:    Node<T>* curr=head;
+        -: 1095:    Node<T>* temp;
+        -: 1096:
+        -: 1097:    do
+        -: 1098:    {
+        -: 1099:
+        -: 1100:        temp=curr->next;
+        -: 1101:        Node<T>* prev=curr;
+        -: 1102:
+        -: 1103:        while(temp != head)
+        -: 1104:        {
+        -: 1105:            if(curr->data == temp->data)
+        -: 1106:            {
+        -: 1107:                prev->next=temp->next;
+        -: 1108:                Node<T>* temp2=temp;
+        -: 1109:                temp=temp->next;
+        -: 1110:                delete temp2;
+        -: 1111:            }
+        -: 1112:            else
+        -: 1113:            {
+        -: 1114:                prev=temp;
+        -: 1115:                temp=temp->next;
+        -: 1116:            }
+        -: 1117:           
+        -: 1118:
+        -: 1119:        }
+        -: 1120:         curr=curr->next;
+        -: 1121:    }while(curr != head);
+        -: 1122:
+        -: 1123:
+        -: 1124:}*/
+        -: 1125:
+        -: 1126:template<class T>
+        4: 1127:void CLinkedList<T>::consume(CLinkedList& other)
+        -: 1128:{
+        4: 1129:    if(this==& other || other.head==NULL)
+        -: 1130:    {
+    #####: 1131:        return;
+        -: 1132:    }
+        -: 1133:
+        4: 1134:    if(head ==NULL)
+        -: 1135:    {
+    #####: 1136:        head=other.head;
+        -: 1137:    }
+        -: 1138:    else
+        -: 1139:    {
+        4: 1140:        Node<T>* endnode=head;
+       16: 1141:        while(endnode->next != head)
+        -: 1142:        {
+       12: 1143:            endnode=endnode->next;
+        -: 1144:        }
+        4: 1145:        endnode->next = other.head;
+        -: 1146:    }
+        -: 1147:
+        4: 1148:    Node<T>* temp=other.head;
+        -: 1149:
+        -: 1150:    do
+        -: 1151:    {
+        -: 1152:        
+       10: 1153:        if(temp->next == other.head)
+        -: 1154:        {
+        4: 1155:            temp->next=head;
+        4: 1156:            break;
+        -: 1157:        }
+        6: 1158:        temp=temp->next;
+        -: 1159:
+        6: 1160:    } while (temp != other.head);
+        4: 1161:    other.head=NULL;
+        -: 1162:}
+        -: 1163:
+        -: 1164:
+        -: 1165:
+        -: 1166:#endif

@@ -1,0 +1,728 @@
+        -:    0:Source:main.cpp
+        -:    0:Source is newer than graph
+        -:    1:#include <iostream>
+        -:    2:#include <sstream>
+        -:    3:#include <string>
+        -:    4:
+        -:    5:#include "Node.h"
+        -:    6:#include "List.h"
+        -:    7:#include "CLinkedList.h"
+        -:    8:#include "CLinkedList.cpp"
+        -:    9:#include "List.cpp"
+        -:   10:#include "Stack.h"
+        -:   11:#include "Stack.cpp"
+        -:   12:#include "Queue.h"
+        -:   13:#include "Queue.cpp"
+        -:   14:
+        -:   15:
+        -:   16:using namespace std;
+        -:   17:
+        -:   18:
+        -:   19:/* -------------------------------------------------------------------------- */
+        -:   20:/*                                 PLEASE READ                                */
+        -:   21:/* -------------------------------------------------------------------------- */
+        -:   22:/*
+        -:   23:    Hello 110 Student :). This main.cpp provides very very basic testing that should help prevent some errors
+        -:   24:    in your code. However, it is not a complete test suite. You should write your own tests to ensure that your
+        -:   25:    code is working as expected
+        -:   26:
+        -:   27:    Please do not be surprised if this main works but your FF upload fails as the FF main is different from this one.
+        -:   28:    This Assignment has many edge cases, please test as much as possible.
+        -:   29:*/
+        -:   30:
+        -:   31:
+        -:   32:
+        1:   33:void t1(){
+        1:   34:    cout<<"Testing CLinkedList"<<endl;
+        1:   35:    CLinkedList<int> list;
+        1:   36:    cout<<"Testing basics"<<endl;
+        1:   37:    list.append(1);
+        1:   38:    list.append(2);
+        1:   39:    list.prepend(3);
+        1:   40:    list.insert(4, 3);
+        1:   41:    list.print();// Output should be "3 -> 1 -> 2 -> 4\n"
+        1:   42:    list.remove(0);//remember remove works based of index
+        1:   43:    list.print();
+        1:   44:    list.remove(0);
+        1:   45:    list.print();
+        1:   46:    list.remove(100);//test for invalid
+        1:   47:    list.print();
+        1:   48:    list.remove(1);
+        1:   49:    list.print();
+        1:   50:    list.removeElements(2);//!!!!
+        1:   51:    list.print();// Output should be "Empty\n
+        1:   52:    list.append(1);
+        1:   53:    list.append(1);
+        1:   54:    list.print();// Output should be "1 -> 1\n"
+        1:   55:    list.removeElements(1);
+        1:   56:    list.print();// Output should be "Empty\n
+        1:   57:}
+        -:   58:
+        1:   59:void tdouble()
+        -:   60:{
+        1:   61:    cout<<"Testing CLinkedList"<<endl;
+        1:   62:    CLinkedList<double> list;
+        1:   63:    cout<<"Testing basics"<<endl;
+        1:   64:    list.append(1);
+        1:   65:    list.append(2);
+        1:   66:    list.prepend(3);
+        1:   67:    list.insert(4, 3);
+        1:   68:    list.print();// Output should be "3 -> 1 -> 2 -> 4\n"
+        1:   69:    list.remove(0);//remember remove works based of index
+        1:   70:    list.print();
+        1:   71:    list.remove(0);
+        1:   72:    list.print();
+        1:   73:    list.remove(100);//test for invalid
+        1:   74:    list.print();
+        1:   75:    list.remove(1);
+        1:   76:    list.print();
+        1:   77:    list.removeElements(2);//!!!!
+        1:   78:    list.print();// Output should be "Empty\n
+        1:   79:    list.append(1);
+        1:   80:    list.append(1);
+        1:   81:    list.print();// Output should be "1 -> 1\n"
+        1:   82:    list.removeElements(1);
+        1:   83:    list.print();// Output should be "Empty\n
+        -:   84:
+        1:   85:     cout<<"Testing CLinkedList"<<endl;
+        -:   86:    //CLinkedList<double> list;
+        1:   87:    cout<<"Testing rotations"<<endl;
+        1:   88:    list.append(1);
+        1:   89:    list.append(2);
+        1:   90:    list.append(3);
+        1:   91:    list.append(4);
+        1:   92:    list.append(5);
+        1:   93:    list.RRotate(2);
+        1:   94:    list.print();// Output should be "4 -> 5 -> 1 -> 2 -> 3\n"
+        1:   95:    list.LRotate(7);
+        1:   96:    list.print();// Output should be "1 -> 2 -> 3 -> 4 -> 5\n"
+        1:   97:    cout<<"Testing Assignment operator and rotation"<<endl;
+        1:   98:    CLinkedList<double> list2;
+        1:   99:    list2= list;
+        1:  100:    list2.print();// Output should be "1 -> 2 -> 3 -> 4 -> 5\n"
+        1:  101:    list2.RRotate(2);
+        1:  102:    list2.print();// Output should be "4 -> 5 -> 1 -> 2 -> 3\n"
+        -:  103:    
+        -:  104:
+        1:  105:     std::cout<<"My funky testsing\n";
+        1:  106:    CLinkedList<double> myList;
+        -:  107:
+        -:  108:    // Test prepend, append, and print
+        1:  109:    myList.prepend(1);
+        1:  110:    myList.prepend(0);
+        1:  111:    myList.append(2);
+        1:  112:    myList.append(3);
+        1:  113:    std::cout<<"Print after prepend and append\n";
+        1:  114:    myList.print(); 
+        -:  115:
+        -:  116:    // Test insert
+        1:  117:    myList.insert(1, 1);
+        1:  118:    std::cout<<"Print after inserting at index 1\n";
+        1:  119:    myList.print();  
+        -:  120:
+        -:  121:    // Test remove
+        1:  122:    myList.remove(2);
+        1:  123:    std::cout<<"Print after removing node at index 2\n";
+        1:  124:    myList.print();
+        -:  125:    //myList.print(); 
+        -:  126:    
+        -:  127:    // Test removeElements
+        1:  128:    myList.removeElements(2);
+        1:  129:    std::cout<<"Print after removing node with 2 as data\n";
+        1:  130:    myList.print();  
+        -:  131:    // Test reverse
+        1:  132:    myList.reverse();
+        1:  133:    std::cout<<"Print reverse\n";
+        1:  134:    myList.print();  
+        -:  135:    // Test clear
+        1:  136:    myList.clear();
+        1:  137:    std::cout<<"Print clear\n";
+        1:  138:    myList.print(); 
+        -:  139:    ///PART ONE OF FUNCKY 
+        -:  140:
+        -:  141:    // Test length
+        1:  142:    std::cout << "Length: " << myList.length() << std::endl;  
+        -:  143:
+        -:  144:    // Create another linked list
+        1:  145:    CLinkedList<double> otherList;
+        1:  146:    otherList.append(5);
+        1:  147:    otherList.append(4);
+        -:  148:    
+        1:  149:std::cout<<"Testing +=\n";
+        -:  150:    // Test += operator
+        1:  151:    otherList.clear();
+        1:  152:    otherList.append(11);
+        1:  153:    otherList.append(6);
+        -:  154:
+        1:  155:    otherList.append(23);
+        1:  156:    otherList.append(76);
+        1:  157:    myList.prepend(1);
+        1:  158:    myList.prepend(0);
+        1:  159:    myList.append(2);
+        1:  160:    myList.append(3);
+        1:  161:   myList += otherList;
+        1:  162:    myList.print();  
+        -:  163:
+        -:  164:    // Test == operator
+        1:  165:    std::cout << "Lists are equal: " << (myList == otherList) << std::endl;  
+        -:  166:
+        -:  167:    // Test -= operator
+        1:  168:    CLinkedList<double> *diffList = myList - otherList;
+        1:  169:    diffList->print();  
+        -:  170:    // Test removeDuplicates
+        1:  171:    myList.append(5);
+        1:  172:    myList.append(5);
+        1:  173:    myList.removeDuplicates();
+        -:  174:    
+        1:  175:    std::cout<<"Testing remove duplicates\n";
+        1:  176:    myList.print();  
+        -:  177:    // Test consume
+        -:  178:    
+        1:  179:    std::cout<<"Testing consume\n";
+        1:  180:    myList.consume(otherList);
+        1:  181:    myList.print(); 
+        -:  182:
+        1:  183:    myList.filter(">",4);//segg
+        1:  184:    myList.filter("<",4);
+        1:  185:    myList.filter("==",4);
+        1:  186:    myList.filter("+",4);
+        1:  187:    myList.filter("-",4);
+        1:  188:   myList.print(); 
+        1:  189:   std::cout<<"Checking slice\n";
+        1:  190:   myList.slice(2,4);
+        1:  191:    myList.print(); 
+        1:  192:}
+        -:  193:
+        1:  194:void tfloat()
+        -:  195:{
+        1:  196:    cout<<"Testing CLinkedList"<<endl;
+        1:  197:    CLinkedList<float> list;
+        1:  198:    cout<<"Testing basics"<<endl;
+        1:  199:    list.append(1);
+        1:  200:    list.append(2);
+        1:  201:    list.prepend(3);
+        1:  202:    list.insert(4, 3);
+        1:  203:    list.print();// Output should be "3 -> 1 -> 2 -> 4\n"
+        1:  204:    list.remove(0);//remember remove works based of index
+        1:  205:    list.print();
+        1:  206:    list.remove(0);
+        1:  207:    list.print();
+        1:  208:    list.remove(100);//test for invalid
+        1:  209:    list.print();
+        1:  210:    list.remove(1);
+        1:  211:    list.print();
+        1:  212:    list.removeElements(2);//!!!!
+        1:  213:    list.print();// Output should be "Empty\n
+        1:  214:    list.append(1);
+        1:  215:    list.append(1);
+        1:  216:    list.print();// Output should be "1 -> 1\n"
+        1:  217:    list.removeElements(1);
+        1:  218:    list.print();// Output should be "Empty\n
+        -:  219:
+        1:  220:     cout<<"Testing CLinkedList"<<endl;
+        -:  221:   // CLinkedList<float> list;
+        1:  222:    cout<<"Testing rotations"<<endl;
+        1:  223:    list.append(1);
+        1:  224:    list.append(2);
+        1:  225:    list.append(3);
+        1:  226:    list.append(4);
+        1:  227:    list.append(5);
+        1:  228:    list.RRotate(2);
+        1:  229:    list.print();// Output should be "4 -> 5 -> 1 -> 2 -> 3\n"
+        1:  230:    list.LRotate(7);
+        1:  231:    list.print();// Output should be "1 -> 2 -> 3 -> 4 -> 5\n"
+        1:  232:    cout<<"Testing Assignment operator and rotation"<<endl;
+        1:  233:    CLinkedList<float> list2;
+        1:  234:    list2= list;
+        1:  235:    list2.print();// Output should be "1 -> 2 -> 3 -> 4 -> 5\n"
+        1:  236:    list2.RRotate(2);
+        1:  237:    list2.print();// Output should be "4 -> 5 -> 1 -> 2 -> 3\n"
+        -:  238:    
+        -:  239:
+        1:  240:     std::cout<<"My funky testsing\n";
+        1:  241:    CLinkedList<float> myList;
+        -:  242:
+        -:  243:    // Test prepend, append, and print
+        1:  244:    myList.prepend(1);
+        1:  245:    myList.prepend(0);
+        1:  246:    myList.append(2);
+        1:  247:    myList.append(3);
+        1:  248:    std::cout<<"Print after prepend and append\n";
+        1:  249:    myList.print(); 
+        -:  250:
+        -:  251:    // Test insert
+        1:  252:    myList.insert(1, 1);
+        1:  253:    std::cout<<"Print after inserting at index 1\n";
+        1:  254:    myList.print();  
+        -:  255:
+        -:  256:    // Test remove
+        1:  257:    myList.remove(2);
+        1:  258:    std::cout<<"Print after removing node at index 2\n";
+        1:  259:    myList.print();
+        -:  260:    //myList.print(); 
+        -:  261:    
+        -:  262:    // Test removeElements
+        1:  263:    myList.removeElements(2);
+        1:  264:    std::cout<<"Print after removing node with 2 as data\n";
+        1:  265:    myList.print();  
+        -:  266:    // Test reverse
+        1:  267:    myList.reverse();
+        1:  268:    std::cout<<"Print reverse\n";
+        1:  269:    myList.print();  
+        -:  270:    // Test clear
+        1:  271:    myList.clear();
+        1:  272:    std::cout<<"Print clear\n";
+        1:  273:    myList.print(); 
+        -:  274:    ///PART ONE OF FUNCKY 
+        -:  275:
+        -:  276:    // Test length
+        1:  277:    std::cout << "Length: " << myList.length() << std::endl;  
+        -:  278:
+        -:  279:    // Create another linked list
+        1:  280:    CLinkedList<float> otherList;
+        1:  281:    otherList.append(4);
+        1:  282:    otherList.append(5);
+        -:  283:
+        -:  284:    // Test += operator
+        1:  285:   myList += otherList;
+        1:  286:    myList.print();  
+        -:  287:
+        -:  288:    // Test == operator
+        1:  289:    std::cout << "Lists are equal: " << (myList == otherList) << std::endl;  
+        -:  290:
+        -:  291:    // Test -= operator
+        1:  292:    CLinkedList<float> *diffList = myList - otherList;
+        1:  293:    diffList->print();  
+        -:  294:    // Test removeDuplicates
+        1:  295:    myList.append(4);
+        1:  296:    myList.append(5);
+        1:  297:    myList.removeDuplicates();
+        -:  298:    
+        1:  299:    std::cout<<"Testing remove duplicates\n";
+        1:  300:    myList.print();  
+        -:  301:    // Test consume
+        -:  302:    
+        1:  303:    std::cout<<"Testing consume\n";
+        1:  304:    myList.consume(otherList);
+        1:  305:    myList.print(); 
+        -:  306:
+        1:  307:myList.filter(">",4);//segg
+        1:  308:    myList.filter("<",4);
+        1:  309:    myList.filter("==",4);
+        1:  310:    myList.filter("+",4);
+        1:  311:    myList.filter("-",4);
+        -:  312:   // myList.filter(">",4);//segg
+        -:  313:   //myList.print(); 
+        1:  314:   std::cout<<"Checking slice\n";
+        1:  315:   myList.slice(2,4);
+        1:  316:    myList.print(); 
+        1:  317:}
+        -:  318:
+        1:  319:void tshort()
+        -:  320:{
+        1:  321:    cout<<"Testing CLinkedList"<<endl;
+        1:  322:    CLinkedList<short> list;
+        1:  323:    cout<<"Testing basics"<<endl;
+        1:  324:    list.append(1);
+        1:  325:    list.append(2);
+        1:  326:    list.prepend(3);
+        1:  327:    list.insert(4, 3);
+        1:  328:    list.print();// Output should be "3 -> 1 -> 2 -> 4\n"
+        1:  329:    list.remove(0);//remember remove works based of index
+        1:  330:    list.print();
+        1:  331:    list.remove(0);
+        1:  332:    list.print();
+        1:  333:    list.remove(100);//test for invalid
+        1:  334:    list.print();
+        1:  335:    list.remove(1);
+        1:  336:    list.print();
+        1:  337:    list.removeElements(2);//!!!!
+        1:  338:    list.print();// Output should be "Empty\n
+        1:  339:    list.append(1);
+        1:  340:    list.append(1);
+        1:  341:    list.print();// Output should be "1 -> 1\n"
+        1:  342:    list.removeElements(1);
+        1:  343:    list.print();// Output should be "Empty\n
+        -:  344:
+        1:  345:     cout<<"Testing CLinkedList"<<endl;
+        -:  346:   // CLinkedList<short> list;
+        1:  347:    cout<<"Testing rotations"<<endl;
+        1:  348:    list.append(1);
+        1:  349:    list.append(2);
+        1:  350:    list.append(3);
+        1:  351:    list.append(4);
+        1:  352:    list.append(5);
+        1:  353:    list.RRotate(2);
+        1:  354:    list.print();// Output should be "4 -> 5 -> 1 -> 2 -> 3\n"
+        1:  355:    list.LRotate(7);
+        1:  356:    list.print();// Output should be "1 -> 2 -> 3 -> 4 -> 5\n"
+        1:  357:    cout<<"Testing Assignment operator and rotation"<<endl;
+        1:  358:    CLinkedList<short> list2;
+        1:  359:    list2= list;
+        1:  360:    list2.print();// Output should be "1 -> 2 -> 3 -> 4 -> 5\n"
+        1:  361:    list2.RRotate(2);
+        1:  362:    list2.print();// Output should be "4 -> 5 -> 1 -> 2 -> 3\n"
+        -:  363:    
+        -:  364:
+        1:  365:     std::cout<<"My funky testsing\n";
+        1:  366:    CLinkedList<short> myList;
+        -:  367:
+        -:  368:    // Test prepend, append, and print
+        1:  369:    myList.prepend(1);
+        1:  370:    myList.prepend(0);
+        1:  371:    myList.append(2);
+        1:  372:    myList.append(3);
+        1:  373:    std::cout<<"Print after prepend and append\n";
+        1:  374:    myList.print(); 
+        -:  375:
+        -:  376:    // Test insert
+        1:  377:    myList.insert(1, 1);
+        1:  378:    std::cout<<"Print after inserting at index 1\n";
+        1:  379:    myList.print();  
+        -:  380:
+        -:  381:    // Test remove
+        1:  382:    myList.remove(2);
+        1:  383:    std::cout<<"Print after removing node at index 2\n";
+        1:  384:    myList.print();
+        -:  385:    //myList.print(); 
+        -:  386:    
+        -:  387:    // Test removeElements
+        1:  388:    myList.removeElements(2);
+        1:  389:    std::cout<<"Print after removing node with 2 as data\n";
+        1:  390:    myList.print();  
+        -:  391:    // Test reverse
+        1:  392:    myList.reverse();
+        1:  393:    std::cout<<"Print reverse\n";
+        1:  394:    myList.print();  
+        -:  395:    // Test clear
+        1:  396:    myList.clear();
+        1:  397:    std::cout<<"Print clear\n";
+        1:  398:    myList.print(); 
+        -:  399:    ///PART ONE OF FUNCKY 
+        -:  400:
+        -:  401:    // Test length
+        1:  402:    std::cout << "Length: " << myList.length() << std::endl;  
+        -:  403:
+        -:  404:    // Create another linked list
+        1:  405:    CLinkedList<short> otherList;
+        1:  406:    otherList.append(4);
+        1:  407:    otherList.append(5);
+        -:  408:
+        -:  409:    // Test += operator
+        1:  410:   myList += otherList;
+        1:  411:    myList.print();  
+        -:  412:
+        -:  413:    // Test == operator
+        1:  414:    std::cout << "Lists are equal: " << (myList == otherList) << std::endl;  
+        -:  415:
+        -:  416:    // Test -= operator
+        1:  417:    CLinkedList<short> *diffList = myList - otherList;
+        1:  418:    diffList->print();  
+        -:  419:    // Test removeDuplicates
+        1:  420:    myList.append(4);
+        1:  421:    myList.append(5);
+        1:  422:    myList.removeDuplicates();
+        -:  423:    
+        1:  424:    std::cout<<"Testing remove duplicates\n";
+        1:  425:    myList.print();  
+        -:  426:    // Test consume
+        -:  427:    
+        1:  428:    std::cout<<"Testing consume\n";
+        1:  429:    myList.consume(otherList);
+        1:  430:    myList.print(); 
+        -:  431:
+        -:  432:   // myList.filter(">",4);//segg
+        -:  433:   //myList.print(); 
+        1:  434:   myList.filter(">",4);//segg
+        1:  435:    myList.filter("<",4);
+        1:  436:    myList.filter("==",4);
+        1:  437:    myList.filter("+",4);
+        1:  438:    myList.filter("-",4);
+        1:  439:   std::cout<<"Checking slice\n";
+        1:  440:   myList.slice(2,4);
+        1:  441:    myList.print(); 
+        1:  442:}
+        -:  443:
+        -:  444:
+        -:  445:
+        1:  446:void t2(){
+        1:  447:    cout<<"Testing CLinkedList"<<endl;
+        1:  448:    CLinkedList<int> list;
+        1:  449:    cout<<"Testing rotations"<<endl;
+        1:  450:    list.append(1);
+        1:  451:    list.append(2);
+        1:  452:    list.append(3);
+        1:  453:    list.append(4);
+        1:  454:    list.append(5);
+        1:  455:    list.RRotate(2);
+        1:  456:    list.print();// Output should be "4 -> 5 -> 1 -> 2 -> 3\n"
+        1:  457:    list.LRotate(7);
+        1:  458:    list.print();// Output should be "1 -> 2 -> 3 -> 4 -> 5\n"
+        1:  459:    cout<<"Testing Assignment operator and rotation"<<endl;
+        1:  460:    CLinkedList<int> list2;
+        1:  461:    list2 = list;
+        1:  462:    list2.print();// Output should be "1 -> 2 -> 3 -> 4 -> 5\n"
+        1:  463:    list2.RRotate(2);
+        1:  464:    list2.print();// Output should be "4 -> 5 -> 1 -> 2 -> 3\n"
+        1:  465:}
+        -:  466:
+        1:  467:void t3(){
+        1:  468:    cout<<"Testing Stack"<<endl;
+        1:  469:    Stack<int> stack;
+        1:  470:    cout<<"Testing basics"<<endl;
+        1:  471:    stack.push(1);
+        1:  472:    stack.push(2);
+        1:  473:    stack.push(3);
+        1:  474:    stack.push(4);
+        1:  475:    cout<<stack.pop()<<endl;// Output should be "4\n"
+        1:  476:    cout<<stack.peek()<<endl;// Output should be "3\n"
+        1:  477:    cout<<stack.pop()<<endl;// Output should be "3\n"
+        1:  478:    cout<<stack.pop()<<endl;// Output should be "2\n"
+        1:  479:    cout<<stack.pop()<<endl;// Output should be "1\n"
+        1:  480:    cout<<stack.pop()<<endl;// Output should be "0\n" since we are returning the default val
+        1:  481:    stack.push(1);
+        1:  482:    stack.push(2);
+        1:  483:    stack.push(3);
+        1:  484:    cout<<"Testing copy constructor"<<endl;
+        1:  485:    Stack<int> stack2(stack);
+        1:  486:    cout<<stack2.pop()<<endl;// Output should be "3\n"
+        1:  487:    cout<<stack2.pop()<<endl;// Output should be "2\n"
+        1:  488:    cout<<stack2.pop()<<endl;// Output should be "1\n"
+        1:  489:    cout<<stack2.pop()<<endl;// Output should be "0\n" since we are returning the default val
+        1:  490:    cout<<stack.pop()<<endl;// Output should be "3\n"
+        1:  491:    cout<<stack.pop()<<endl;// Output should be "2\n"
+        1:  492:    cout<<stack.pop()<<endl;// Output should be "1\n"
+        1:  493:    cout<<stack.pop()<<endl;// Output should be "0\n" since we are returning the default val
+        -:  494:    //loading up items to test destructor
+        1:  495:    stack.push(1);
+        1:  496:    stack.push(2);
+        1:  497:    stack.push(3);
+        -:  498:
+        1:  499:    std::cout<<"MY TESTS\n";
+        1:  500:    Stack<int> qz;
+        1:  501:    std::cout<<" Is qz empty?";
+        1:  502:    std::cout<<qz.isEmpty()<<std::endl;
+        -:  503:
+        -:  504:    
+        1:  505:}
+        -:  506:
+        1:  507:void t4(){
+        1:  508:    cout<<"Testing Queue"<<endl;
+        1:  509:    Queue<int> queue;
+        1:  510:    cout<<"Testing basics"<<endl;
+        1:  511:    queue.enqueue(1);
+        1:  512:    queue.enqueue(2);
+        1:  513:    queue.enqueue(3);
+        1:  514:    queue.enqueue(4);
+        1:  515:    cout<<queue.dequeue()<<endl;// Output should be "1\n"
+        1:  516:    cout<<queue.peek()<<endl;// Output should be "2\n"
+        1:  517:    cout<<queue.dequeue()<<endl;// Output should be "2\n"
+        1:  518:    cout<<queue.dequeue()<<endl;// Output should be "3\n"
+        1:  519:    cout<<queue.dequeue()<<endl;// Output should be "4\n"
+        1:  520:    cout<<queue.dequeue()<<endl;// Output should be "0\n" since we are returning the default val
+        1:  521:    queue.enqueue(1);
+        1:  522:    queue.enqueue(2);
+        1:  523:    queue.enqueue(3);
+        1:  524:    cout<<"Testing copy constructor"<<endl;
+        1:  525:    Queue<int> queue2(queue);
+        1:  526:    cout<<queue2.dequeue()<<endl;// Output should be "1\n"
+        1:  527:    cout<<queue2.dequeue()<<endl;// Output should be "2\n"
+        1:  528:    cout<<queue2.dequeue()<<endl;// Output should be "3\n"
+        1:  529:    cout<<queue2.dequeue()<<endl;// Output should be "0\n" since we are returning the default val
+        1:  530:    cout<<queue.dequeue()<<endl;// Output should be "1\n"
+        1:  531:    cout<<queue.dequeue()<<endl;// Output should be "2\n"
+        1:  532:    cout<<queue.dequeue()<<endl;// Output should be "3\n"
+        1:  533:    cout<<queue.dequeue()<<endl;// Output should be "0\n" since we are returning the default val
+        -:  534:    //loading up items to test destructor
+        1:  535:    queue.enqueue(1);
+        1:  536:    queue.enqueue(2);
+        1:  537:    queue.enqueue(3);
+        -:  538:
+        1:  539:    std::cout<<"MY TESTS\n";
+        1:  540:    Queue<int> qz;
+        1:  541:    std::cout<<" Is qz empty?";
+        1:  542:    std::cout<<qz.isEmpty()<<std::endl;
+        -:  543:
+        -:  544:
+        -:  545:
+        -:  546:
+        -:  547:
+        1:  548:}
+        -:  549:
+        1:  550:void tmine()
+        -:  551:{
+        -:  552:
+        1:  553:    std::cout<<"My funky testsing\n";
+        1:  554:    CLinkedList<int> myList;
+        -:  555:
+        -:  556:    // Test prepend, append, and print
+        1:  557:    myList.prepend(1);
+        1:  558:    myList.prepend(0);
+        1:  559:    myList.append(2);
+        1:  560:    myList.append(3);
+        1:  561:    std::cout<<"Print after prepend and append\n";
+        1:  562:    myList.print(); 
+        -:  563:
+        -:  564:    // Test insert
+        1:  565:    myList.insert(1, 1);
+        1:  566:    std::cout<<"Print after inserting at index 1\n";
+        1:  567:    myList.print();  
+        -:  568:
+        -:  569:    // Test remove
+        1:  570:    myList.remove(2);
+        1:  571:    std::cout<<"Print after removing node at index 2\n";
+        1:  572:    myList.print();
+        -:  573:    //myList.print(); 
+        -:  574:    
+        -:  575:    // Test removeElements
+        1:  576:    myList.removeElements(2);
+        1:  577:    std::cout<<"Print after removing node with 2 as data\n";
+        1:  578:    myList.print();  
+        -:  579:    // Test reverse
+        1:  580:    myList.reverse();
+        1:  581:    std::cout<<"Print reverse\n";
+        1:  582:    myList.print();  
+        -:  583:    // Test clear
+        1:  584:    myList.clear();
+        1:  585:    std::cout<<"Print clear\n";
+        1:  586:    myList.print(); 
+        -:  587:    ///PART ONE OF FUNCKY 
+        -:  588:
+        -:  589:    // Test length
+        1:  590:    std::cout << "Length: " << myList.length() << std::endl;  
+        -:  591:
+        -:  592:    // Create another linked list
+        1:  593:    CLinkedList<int> otherList;
+        1:  594:    otherList.append(4);
+        1:  595:    otherList.append(5);
+        -:  596:
+        -:  597:    // Test += operator
+        1:  598:   myList += otherList;
+        1:  599:    myList.print();  
+        -:  600:
+        -:  601:    // Test == operator
+        1:  602:    std::cout << "Lists are equal: " << (myList == otherList) << std::endl;  
+        -:  603:
+        -:  604:    // Test -= operator
+        1:  605:    CLinkedList<int> *diffList = myList - otherList;
+        1:  606:    diffList->print();  
+        -:  607:    // Test removeDuplicates
+        1:  608:    myList.append(4);
+        1:  609:    myList.append(5);
+        1:  610:    myList.removeDuplicates();
+        -:  611:    
+        1:  612:    std::cout<<"Testing remove duplicates\n";
+        1:  613:    myList.print();  
+        -:  614:    // Test consume
+        -:  615:    
+        1:  616:    std::cout<<"Testing consume\n";
+        1:  617:    myList.consume(otherList);
+        1:  618:    myList.print(); 
+        -:  619:
+        -:  620:   // myList.filter(">",4);//segg
+        -:  621:   //myList.print(); 
+        1:  622:   myList.filter(">",4);//segg
+        1:  623:    myList.filter("<",4);
+        1:  624:    myList.filter("==",4);
+        1:  625:    myList.filter("+",4);
+        1:  626:    myList.filter("-",4);
+        1:  627:   std::cout<<"Checking slice\n";
+        1:  628:   myList.slice(2,4);
+        1:  629:    myList.print(); 
+        1:  630:}
+        -:  631:
+        1:  632:int main(){
+        -:  633:    
+        1:  634:    t3();
+        1:  635:    std::cout<<"---------------------------------------------------------------"<<std::endl;
+        1:  636:    t4();
+        1:  637:    std::cout<<"---------------------------------------------------------------"<<std::endl;
+        1:  638:    t2();
+        1:  639:    std::cout<<"---------------------------------------------------------------"<<std::endl;
+        1:  640:     t1();
+        1:  641:     std::cout<<"---------------------------------------------------------------"<<std::endl;
+        1:  642:tdouble();
+        1:  643:     std::cout<<"---------------------------------------------------------------"<<std::endl;
+        1:  644:tfloat();
+        1:  645:     std::cout<<"---------------------------------------------------------------"<<std::endl;
+        1:  646:     tshort();
+        1:  647:     std::cout<<"---------------------------------------------------------------"<<std::endl;
+        1:  648:     tmine();
+        1:  649:     std::cout<<"---------------------------Its over!!!!------------------------"<<std::endl;
+        -:  650:
+        1:  651:    CLinkedList<int> myList;
+        -:  652:
+        -:  653:    // Test prepend, append, and print
+        1:  654:    myList.prepend(1);
+        1:  655:    myList.prepend(2);
+        1:  656:    myList.prepend(3);
+        1:  657:    myList.prepend(4);
+        1:  658:     myList.prepend(5);
+        -:  659:
+        1:  660:    myList.print();
+        1:  661:    std::cout<<myList.length()<<std::endl;
+        1:  662:    myList.swap(2,4);
+        1:  663:    std::cout<<"Swapping stuff\n";
+        1:  664:    myList.print();
+        1:  665:    std::cout<<"using []\n";
+        1:  666:    std::cout<<myList.operator[](2)<<std::endl;
+        -:  667:
+        1:  668:std::cout<<"---------------------------Its over!!!!------------------------"<<std::endl;
+        -:  669:
+        1:  670:    CLinkedList<float> myList2;
+        -:  671:
+        -:  672:    // Test prepend, append, and print
+        1:  673:    myList2.prepend(1);
+        1:  674:    myList2.prepend(2);
+        1:  675:    myList2.prepend(3);
+        1:  676:    myList2.prepend(4);
+        1:  677:     myList2.prepend(5);
+        -:  678:
+        1:  679:    myList2.print();
+        1:  680:    std::cout<<myList2.length()<<std::endl;
+        1:  681:    myList2.swap(2,4);
+        1:  682:    std::cout<<"Swapping stuff\n";
+        1:  683:    myList2.print();
+        1:  684:    std::cout<<"using []\n";
+        1:  685:    std::cout<<myList2.operator[](2)<<std::endl;
+        -:  686:
+        1:  687:    std::cout<<"---------------------------Its over!!!!------------------------"<<std::endl;
+        -:  688:
+        1:  689:    CLinkedList<double> myList3;
+        -:  690:
+        -:  691:    // Test prepend, append, and print
+        1:  692:    myList3.prepend(1);
+        1:  693:    myList3.prepend(2);
+        1:  694:    myList3.prepend(3);
+        1:  695:    myList3.prepend(4);
+        1:  696:     myList3.prepend(5);
+        -:  697:
+        1:  698:    myList3.print();
+        1:  699:    std::cout<<myList3.length()<<std::endl;
+        1:  700:    myList3.swap(2,4);
+        1:  701:    std::cout<<"Swapping stuff\n";
+        1:  702:    myList3.print();
+        1:  703:    std::cout<<"using []\n";
+        1:  704:    std::cout<<myList3.operator[](2)<<std::endl;
+        -:  705:
+        1:  706:    std::cout<<"---------------------------Its over!!!!------------------------"<<std::endl;
+        -:  707:
+        1:  708:    CLinkedList<short> myList4;
+        -:  709:
+        -:  710:    // Test prepend, append, and print
+        1:  711:    myList4.prepend(1);
+        1:  712:    myList4.prepend(2);
+        1:  713:    myList4.prepend(3);
+        1:  714:    myList4.prepend(4);
+        1:  715:     myList4.prepend(5);
+        -:  716:
+        1:  717:    myList4.print();
+        1:  718:    std::cout<<myList4.length()<<std::endl;
+        1:  719:    myList4.swap(2,4);
+        1:  720:    std::cout<<"Swapping stuff\n";
+        1:  721:    myList4.print();
+        1:  722:    std::cout<<"using []\n";
+        1:  723:    std::cout<<myList4.operator[](2)<<std::endl;
+        -:  724:    
+        1:  725:    return 0;
+        1:  726:}

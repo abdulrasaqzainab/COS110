@@ -4,7 +4,7 @@ In this module, I used **C++98** and an **object-oriented approach** to solve co
 
 ## 📌 Module Overview  
 
-This module focuses on **Object-Oriented (OO) Programming** and covers fundamental concepts such as:  
+This module focused on **Object-Oriented (OO) Programming** and covered fundamental concepts such as:  
 
 ✅ **Inheritance & Multiple Inheritance**  
 ✅ **Polymorphism**  
@@ -12,8 +12,6 @@ This module focuses on **Object-Oriented (OO) Programming** and covers fundament
 ✅ **Memory Management (Static & Dynamic Binding)**  
 ✅ **Interfaces & Encapsulation**  
 ✅ **Code Reusability & Modular Design**  
-
-The goal is to develop well-structured, robust, and documented programs using a modern **OO programming language**.  
 
 ## 📂 Topics Covered  
 
